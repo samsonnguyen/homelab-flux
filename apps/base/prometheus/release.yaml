@@ -6,7 +6,6 @@ metadata:
 spec:
   releaseName: kube-prometheus-stack
   chart:
-    version: "14.5.*"
     spec:
       chart: kube-prometheus-stack
       sourceRef:
