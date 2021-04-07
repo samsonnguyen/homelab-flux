@@ -5,3 +5,9 @@ resources:
   - ../base/prometheus
 patchesStrategicMerge:
   - podinfo-values.yaml
+  - prometheus-values.yaml
+patches:
+  - target:
+      kind: IngressRoute
+      name: prometheus-ingress
+    path: prometheus-ingress-patch.yaml

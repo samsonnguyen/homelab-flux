@@ -4,3 +4,20 @@ namespace: prometheus
 resources:
   - namespace.yaml
   - release.yaml
+  - ../ingress
+  - ../wildcard-cert
+patches:
+  - target:
+      kind: IngressRoute
+      name: ingress
+    patch: |-
+      - op: replace
+        path: /metadata/name
+        value: prometheus-ingress
+  - target:
+      kind: .*
+      name: .*
+    patch: |-
+      - op: replace
+        path: /metadata/namespace
+        value: prometheus
