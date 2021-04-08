@@ -1,0 +1,19 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: kibana
+  namespace: test2
+spec:
+  releaseName: kibana
+  chart:
+    spec:
+      chart: kibana
+      sourceRef:
+        kind: HelmRepository
+        name: kibana
+        namespace: flux-system
+  interval: 5m
+  install:
+    remediation:
+      retries: 3
+  
