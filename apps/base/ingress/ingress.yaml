@@ -8,11 +8,9 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: 
+    - match:
       kind: Rule
-      services:
-      - name: kube-prometheus-stack-grafana
-        port: 80
+      services: []
       middlewares:
       - name: basic-auth
         namespace: traefik

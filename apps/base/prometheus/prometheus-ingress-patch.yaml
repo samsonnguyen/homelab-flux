@@ -1,0 +1,3 @@
+- op: add
+  path: /spec/routes/0/services/0
+  value: {"name": "kube-prometheus-stack-grafana", "port": 80 }
