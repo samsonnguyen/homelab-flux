@@ -4,4 +4,3 @@ namespace: test2
 resources:
   - namespace.yaml
   - release.yaml
-patch:

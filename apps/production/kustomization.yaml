@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ../base/podinfo
   - ../base/prometheus
+  - ../base/kibana
 patchesStrategicMerge:
   - podinfo-values.yaml
   - prometheus-values.yaml
