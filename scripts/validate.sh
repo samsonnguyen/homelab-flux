@@ -17,7 +17,8 @@
 set -o errexit
 
 # mirror kustomize-controller build options
-kustomize_flags="--enable_kyaml=false --allow_id_changes=false --load_restrictor=LoadRestrictionsNone"
+# kustomize_flags="--enable_kyaml=false --allow_id_changes=false --load_restrictor=LoadRestrictionsNone"
+kustomize_flags=""
 kustomize_config="kustomization.yaml"
 
 find . -type f -name '*.yaml' -print0 | while IFS= read -r -d $'\0' file;

@@ -6,3 +6,4 @@ resources:
   - podinfo.yaml
   - prometheus-community.yaml
   - elastic.yaml
+  - nextcloud.yaml
