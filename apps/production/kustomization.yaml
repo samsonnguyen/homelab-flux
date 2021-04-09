@@ -3,7 +3,6 @@ kind: Kustomization
 resources:
   - ../base/podinfo
   - ../base/prometheus
-  - ../base/kibana
   - ../base/nextcloud
 patchesStrategicMerge:
   - podinfo-values.yaml

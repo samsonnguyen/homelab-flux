@@ -5,5 +5,4 @@ resources:
   - bitnami.yaml
   - podinfo.yaml
   - prometheus-community.yaml
-  - elastic.yaml
   - nextcloud.yaml
