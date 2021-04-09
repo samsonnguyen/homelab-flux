@@ -22,5 +22,5 @@ spec:
     persistence:
       enabled: true
       storageClass: freenas-nfs
-      size: 1Ti
+      size: 500Gi
     metrics.enabled: true
