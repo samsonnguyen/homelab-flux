@@ -4,6 +4,7 @@ resources:
   - ../base/podinfo
   - ../base/prometheus
   - ../base/nextcloud
+  - ../base/kibana
 patchesStrategicMerge:
   - podinfo-values.yaml
   - prometheus-values.yaml
