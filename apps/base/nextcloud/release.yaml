@@ -21,6 +21,6 @@ spec:
   values:
     persistence:
       enabled: true
-      storageClass: freenas-nfs-retain
+      storageClass: freenas-nfs
       size: 1Ti
     metrics.enabled: true
