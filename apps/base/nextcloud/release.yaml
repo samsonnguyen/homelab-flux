@@ -16,8 +16,6 @@ spec:
   install:
     remediation:
       retries: 3
-  # Default values
-  # https://github.com/stefanprodan/podinfo/blob/master/charts/podinfo/values.yaml
   values:
     persistence:
       enabled: true
