@@ -12,3 +12,6 @@
 *.out
 
 bin/
+
+freenas-iscsi.yaml
+freenas-nfs.yaml
