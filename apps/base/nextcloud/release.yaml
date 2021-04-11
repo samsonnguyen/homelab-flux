@@ -21,6 +21,6 @@ spec:
   values:
     persistence:
       enabled: true
-      storageClass: freenas-nfs
+      storageClass: org.democratic-csi.nfs
       size: 500Gi
     metrics.enabled: true
