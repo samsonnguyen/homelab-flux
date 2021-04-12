@@ -20,6 +20,7 @@ spec:
           smtpUsernameKey: smtp_username
           smtpPasswordKey: smtp_password
     postgresql:
+      existingSecret: nextcloud-db
       enabled: true
       persistence:
         enabled: true
@@ -37,4 +38,9 @@ spec:
       enabled: true
     internalDatabase:
       enabled: false
+    externalDatabase:
+      enabled: true
+      password: U4xHpoGVHQZyTxq8zfV
+      user: nextcloud
+
 
