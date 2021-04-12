@@ -15,13 +15,6 @@ patches:
         path: /metadata/name
         value: prometheus-ingress
   - target:
-      kind: .*
-      name: .*
-    patch: |-
-      - op: replace
-        path: /metadata/namespace
-        value: prometheus
-  - target:
       kind: IngressRoute
       name: ingress
-    path: prometheus-ingress-patch.yaml
+    path: ingress-patch.yaml

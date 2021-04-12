@@ -1,0 +1,3 @@
+- op: add
+  path: /spec/routes/0/services/0
+  value: {"name": "nextcloud", "port": 8080, "namespace": "nextcloud" }
