@@ -27,9 +27,12 @@ spec:
         size: 20Gi
     redis:
       enabled: true
-      persistence:
-        enabled: true
-        storageClass: freenas-iscsi-csi
+      master:
+        persistence:
+          storageClass: freenas-iscsi-csi
+      slave:
+        persistence:
+          storageClass: freenas-iscsi-csi
     cronjob:
       enabled: true
     internalDatabase:
