@@ -1,0 +1,21 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: nextcloud
+  namespace: nextcloud
+spec:
+  values:
+    persistence:
+      enabled: true
+      storageClass: freenas-iscsi-csi
+      size: 500Gi
+    metrics.enabled: true
+    nextcloud:
+      host: cloud.samsonnguyen.ca
+      existingSecret:
+        enabled:
+          secretName: nextcloud
+          usernameKey: username
+          passwordKey: password
+          smtpUsernameKey: smtp_username
+          smtpPasswordKey: smtp_password
