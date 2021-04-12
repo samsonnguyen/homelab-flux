@@ -12,15 +12,7 @@ spec:
     metrics.enabled: true
     nextcloud:
       host: cloud.samsonnguyen.ca
-      existingSecret:
-        enabled:
-          secretName: nextcloud
-          usernameKey: username
-          passwordKey: password
-          smtpUsernameKey: smtp_username
-          smtpPasswordKey: smtp_password
     postgresql:
-      existingSecret: nextcloud-db
       enabled: true
       persistence:
         enabled: true
@@ -38,9 +30,5 @@ spec:
       enabled: true
     internalDatabase:
       enabled: false
-    externalDatabase:
-      enabled: true
-      password: U4xHpoGVHQZyTxq8zfV
-      user: nextcloud
 
 
