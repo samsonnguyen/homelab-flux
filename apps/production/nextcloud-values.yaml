@@ -7,7 +7,7 @@ spec:
   values:
     persistence:
       enabled: true
-      storageClass: freenas-nfs-csi
+      storageClass: freenas-iscsi-csi
       size: 500Gi
     metrics.enabled: true
     nextcloud:
