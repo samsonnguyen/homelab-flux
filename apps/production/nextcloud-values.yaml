@@ -7,7 +7,7 @@ spec:
   values:
     persistence:
       enabled: true
-      storageClass: freenas-iscsi-csi
+      storageClass: freenas-nfs-csi
       size: 500Gi
     metrics.enabled: true
     nextcloud:
@@ -19,3 +19,19 @@ spec:
           passwordKey: password
           smtpUsernameKey: smtp_username
           smtpPasswordKey: smtp_password
+    postgresql:
+      enabled: true
+      persistence:
+        enabled: true
+        storageClass: freenas-iscsi-csi
+        size: 20Gi
+    redis:
+      enabled: true
+      persistence:
+        enabled: true
+        storageClass: freenas-iscsi-csi
+    cronjob:
+      enabled: true
+    internalDatabase:
+      enabled: false
+
