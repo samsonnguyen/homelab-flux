@@ -14,6 +14,9 @@ spec:
       host: cloud.samsonnguyen.ca
     postgresql:
       enabled: true
+      postgresqlDatabase: nextcloud
+      postgresqlPostgresPassword: U4xHpoGVHQZyTxq8zfV
+      postgresqlUsername: nextcloud
       persistence:
         enabled: true
         storageClass: freenas-iscsi-csi
