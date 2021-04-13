@@ -40,10 +40,5 @@ spec:
       type: postgresql
       username: nextcloud
       password: changeme
-      # existingSecret:
-      #   secretName: nextcloud-postgresql
-      #   passwordKey: postgresql-password
-      #   usernameKey: postgresql-user
-
 
 
