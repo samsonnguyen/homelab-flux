@@ -16,7 +16,6 @@ spec:
       enabled: true
       postgresqlDatabase: nextcloud
       postgresqlPostgresPassword: U4xHpoGVHQZyTxq8zfV
-      postgresqlUsername: nextcloud
       persistence:
         enabled: true
         storageClass: freenas-iscsi-csi
@@ -36,10 +35,12 @@ spec:
     externalDatabase:
       enabled: true
       type: postgresql
-      existingSecret:
-        secretName: nextcloud-postgresql
-        passwordKey: postgresql-password
-        usernameKey: postgresql-user
+      username: postgres
+      password: U4xHpoGVHQZyTxq8zfV
+      # existingSecret:
+      #   secretName: nextcloud-postgresql
+      #   passwordKey: postgresql-password
+      #   usernameKey: postgresql-user
 
 
 
