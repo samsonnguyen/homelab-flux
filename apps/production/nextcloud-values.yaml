@@ -23,7 +23,7 @@ spec:
         storageClass: freenas-iscsi-csi
         size: 20Gi
     redis:
-      enabled: false
+      enabled: true
       master:
         persistence:
           storageClass: freenas-iscsi-csi
