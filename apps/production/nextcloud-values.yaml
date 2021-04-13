@@ -34,7 +34,7 @@ spec:
       enabled: true
       host: nextcloud-postgresql
       type: postgresql
-      username: postgres
+      username: nextcloud
       password: changeme
       # existingSecret:
       #   secretName: nextcloud-postgresql
