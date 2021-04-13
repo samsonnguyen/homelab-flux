@@ -15,7 +15,8 @@ spec:
       enabled: true
       storageClass: freenas-iscsi-csi
       size: 500Gi
-    metrics.enabled: true
+    metrics:
+      enabled: true
     nextcloud:
       host: cloud.samsonnguyen.ca
     postgresql:
