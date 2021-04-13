@@ -5,6 +5,8 @@ metadata:
   namespace: nextcloud
 spec:
   values:
+    image:
+      tag: 19-apache
     livenessProbe:
       enabled: false
     readinessProbe:
