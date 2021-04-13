@@ -6,6 +6,7 @@ resources:
   - release.yaml
   - ../ingress
   - ../wildcard-cert
+  - redirectregex-middleware.yaml
 patches:
   - target:
       kind: IngressRoute
