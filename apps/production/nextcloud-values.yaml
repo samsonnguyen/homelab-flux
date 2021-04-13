@@ -32,9 +32,10 @@ spec:
       enabled: false
     externalDatabase:
       enabled: true
+      host: nextcloud-postgresql
       type: postgresql
       username: postgres
-      password: U4xHpoGVHQZyTxq8zfV
+      password: changeme
       # existingSecret:
       #   secretName: nextcloud-postgresql
       #   passwordKey: postgresql-password
