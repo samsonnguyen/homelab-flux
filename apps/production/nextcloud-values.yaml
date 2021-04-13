@@ -5,6 +5,10 @@ metadata:
   namespace: nextcloud
 spec:
   values:
+    livenessProbe:
+      enabled: false
+    readinessProbe:
+      enabled: false
     persistence:
       enabled: true
       storageClass: freenas-iscsi-csi
