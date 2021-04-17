@@ -7,10 +7,10 @@ spec:
   chart:
     spec:
       version: ">=14.5.0"
-
   values:
     grafana:
-      ingress: false
+      ingress: 
+        enabled: false
       persistence:
         enabled: true
         storageClassName: freenas-nfs-csi
@@ -21,8 +21,3 @@ spec:
     prometheus:
       ingress:
         enabled: false
-        hosts:
-          - metrics.dev1.use1.immunet.com
-        paths:
-          - /*
-        pathType: Prefix
