@@ -10,9 +10,9 @@ spec:
     - match:
       kind: Rule
       services:
-        name: kube-prometheus-stack-grafana
-        port: 80
-        namespace: prometheus
+        - name: kube-prometheus-stack-grafana
+          port: 80
+          namespace: prometheus
       middlewares:
       - name: basic-auth
         namespace: traefik
