@@ -21,5 +21,5 @@ spec:
     loki:
       persistence:
         enabled: true
-        storageClassName: freenas-nfs-csi
+        storageClassName: freenas-iscsi-csi
         size: 50Gi
