@@ -6,7 +6,7 @@ metadata:
 spec:
   values:
     image:
-      tag: 20-apache
+      tag: 21-apache
     livenessProbe:
       enabled: false
     readinessProbe:
