@@ -1,0 +1,25 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: loki
+  namespace: loki
+spec:
+  chart:
+    spec:
+      version: "2.3.x"
+  values:
+    grafana:
+      enabled: true
+    prometheus:
+      enabled: true
+      server:
+        persistentVolume: 
+          enabled: false
+      alertmanager:
+        persistentVolume:
+          enabled: false
+    loki:
+      persistence:
+        enabled: true
+        storageClassName: freenas-nfs-csi
+        size: 50Gi

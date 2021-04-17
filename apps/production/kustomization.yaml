@@ -4,10 +4,12 @@ resources:
   - ../base/podinfo
   - ../base/prometheus
   - ../base/nextcloud
+  - ../base/loki-stack
 patchesStrategicMerge:
   - podinfo-values.yaml
   - prometheus-values.yaml
   - nextcloud-values.yaml
+  - loki-stack-values.yaml
 patches:
   - target:
       kind: IngressRoute
