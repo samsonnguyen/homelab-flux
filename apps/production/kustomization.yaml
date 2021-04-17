@@ -14,8 +14,15 @@ patches:
   - target:
       kind: IngressRoute
       name: prometheus-ingress
+      namespace: prometheus
     path: prometheus-ingress-patch.yaml
   - target:
       kind: IngressRoute
+      name: grafana-ingress
+      namespace: prometheus
+    path: grafana-ingress-patch.yaml
+  - target:
+      kind: IngressRoute
       name: nextcloud-ingress
+      namespace: nextcloud
     path: nextcloud-ingress-patch.yaml
