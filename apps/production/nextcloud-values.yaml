@@ -43,5 +43,8 @@ spec:
       type: postgresql
       username: nextcloud
       password: changeme
+    ingress:
+      enabled: true
+      tls: true
 
 
