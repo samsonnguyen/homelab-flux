@@ -9,3 +9,5 @@ resources:
   - democratic-csi.yaml
   - grafana.yaml
   - traefik.yaml
+  - jetstack.yaml
+  - mittwald.yaml
