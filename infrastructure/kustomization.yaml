@@ -3,6 +3,8 @@ kind: Kustomization
 resources:
   - sources
   - nginx
+  - traefik
   - redis
   - democratic-csi
   - metallb
+  - traefik

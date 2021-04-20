@@ -8,3 +8,4 @@ resources:
   - nextcloud.yaml
   - democratic-csi.yaml
   - grafana.yaml
+  - traefik.yaml
