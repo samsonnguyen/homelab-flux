@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: wildcard-samsonnguyen-ca
+spec:
+  secretName: wildcard-samsonnguyen-ca
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  dnsNames:
+  - '*.samsonnguyen.ca'
+  - samsonnguyen.ca
