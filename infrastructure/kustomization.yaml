@@ -7,4 +7,3 @@ resources:
   - redis
   - democratic-csi
   - metallb
-  - traefik
