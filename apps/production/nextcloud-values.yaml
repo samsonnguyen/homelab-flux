@@ -20,7 +20,8 @@ spec:
     nextcloud:
       host: cloud.samsonnguyen.ca
       extraEnv:
-        OVERWRITEPROTOCOL: https
+        - name: OVERWRITEPROTOCOL
+          value: https
     postgresql:
       enabled: true
       persistence:
