@@ -4,5 +4,6 @@ namespace: cert-manager
 resources:
   - namespace.yaml
   - release.yaml
+  - sealed-cloudflare-api-token-secret.yaml
   # - letsencrypt-staging.yml
   # - letsencrypt-prod.yml
