@@ -2,6 +2,9 @@ apiVersion: cert-manager.io/v1alpha2
 kind: Certificate
 metadata:
   name: wildcard-samsonnguyen-ca
+  annotations:
+    replicator.v1.mittwald.de/replication-allowed: "true"
+    replicator.v1.mittwald.de/replication-allowed-namespaces: "*"
 spec:
   secretName: wildcard-samsonnguyen-ca
   issuerRef:
