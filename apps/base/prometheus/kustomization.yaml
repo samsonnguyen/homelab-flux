@@ -6,6 +6,7 @@ resources:
   - release.yaml
   - ../ingress
   - ../wildcard-cert
+  - grafana-ingress-route.yaml
 patches:
   - target:
       kind: IngressRoute
@@ -17,4 +18,4 @@ patches:
   - target:
       kind: IngressRoute
       name: ingress
-    path: ingress-patch.yaml
+    path: prometheus-ingress-patch.yaml

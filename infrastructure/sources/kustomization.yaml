@@ -7,3 +7,4 @@ resources:
   - prometheus-community.yaml
   - nextcloud.yaml
   - democratic-csi.yaml
+  - grafana.yaml

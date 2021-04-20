@@ -4,16 +4,25 @@ resources:
   - ../base/podinfo
   - ../base/prometheus
   - ../base/nextcloud
+  - ../base/loki-stack
 patchesStrategicMerge:
   - podinfo-values.yaml
   - prometheus-values.yaml
   - nextcloud-values.yaml
+  - loki-stack-values.yaml
 patches:
   - target:
       kind: IngressRoute
       name: prometheus-ingress
+      namespace: prometheus
     path: prometheus-ingress-patch.yaml
   - target:
       kind: IngressRoute
+      name: grafana-ingress
+      namespace: prometheus
+    path: grafana-ingress-patch.yaml
+  - target:
+      kind: IngressRoute
       name: nextcloud-ingress
+      namespace: nextcloud
     path: nextcloud-ingress-patch.yaml

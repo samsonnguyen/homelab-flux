@@ -5,6 +5,8 @@ metadata:
   namespace: nextcloud
 spec:
   values:
+    image:
+      tag: 21-apache
     livenessProbe:
       enabled: false
     readinessProbe:
@@ -13,7 +15,8 @@ spec:
       enabled: true
       storageClass: freenas-iscsi-csi
       size: 500Gi
-    metrics.enabled: true
+    metrics:
+      enabled: true
     nextcloud:
       host: cloud.samsonnguyen.ca
     postgresql:
@@ -23,7 +26,7 @@ spec:
         storageClass: freenas-iscsi-csi
         size: 20Gi
     redis:
-      enabled: false
+      enabled: true
       master:
         persistence:
           storageClass: freenas-iscsi-csi
@@ -40,5 +43,8 @@ spec:
       type: postgresql
       username: nextcloud
       password: changeme
+    ingress:
+      enabled: true
+      tls: true
 
 
