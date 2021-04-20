@@ -11,3 +11,4 @@ resources:
   - traefik.yaml
   - jetstack.yaml
   - mittwald.yaml
+  - sealed-secrets.yaml
