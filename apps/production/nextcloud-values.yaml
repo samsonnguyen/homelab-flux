@@ -19,6 +19,8 @@ spec:
       enabled: true
     nextcloud:
       host: cloud.samsonnguyen.ca
+      extraEnv:
+        OVERWRITEPROTOCOL: https
     postgresql:
       enabled: true
       persistence:
@@ -45,7 +47,5 @@ spec:
       password: changeme
     ingress:
       enabled: false
-    extraEnv:
-      OVERWRITEPROTOCOL: https
 
 
