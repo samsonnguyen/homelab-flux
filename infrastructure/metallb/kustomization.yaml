@@ -1,8 +1,4 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - sources
-  - nginx
-  - redis
-  - democratic-csi
-  - metallb
+  - release.yml
