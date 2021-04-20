@@ -45,5 +45,7 @@ spec:
       password: changeme
     ingress:
       enabled: false
+    extraEnv:
+      OVERWRITEPROTOCOL: https
 
 
