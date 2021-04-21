@@ -15,6 +15,6 @@ spec:
     name: home-assistant-config
     namespace: home-assistant
   nfs:
-    path: /mnt/storage_1/k8s/manual/home-assistant/home
+    path: /mnt/storage_1/k8s/manual/home-assistant/home-assistant-config
     server: freenas-int.samsonnguyen.ca
   volumeMode: Filesystem
