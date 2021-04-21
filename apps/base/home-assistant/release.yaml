@@ -23,7 +23,7 @@ spec:
       TZ: "America/Edmonton"
     persistence:
       config:
-        enabled: true
+        enabled: false
         emptyDir:
           enabled: false
         storageClass: "-"
