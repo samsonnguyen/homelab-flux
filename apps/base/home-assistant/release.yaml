@@ -17,22 +17,23 @@ spec:
     remediation:
       retries: 3
   values:
-    home-assistant:
-      env:
-        PUID: "1001"
-        PGID: "1001"
-        TZ: "America/Edmonton"
-      persistence:
-        config:
-          enabled: true
-          size: 15Gi
-        existingClaim:
-          "home-assistant-config"
+    env:
+      PUID: "1001"
+      PGID: "1001"
+      TZ: "America/Edmonton"
+    persistence:
+      config:
+        enabled: true
+        emptyDir:
+          enabled: false
+        storageClass: "-"
+        size: 15Gi
+      existingClaim: "home-assistant-config"
     mariadb:
       enabled: true
       primary:
         persistence:
-          enabled: false
+          enabled: true
           storageClass: freenas-iscsi-csi
     prometheus:
       serviceMonitor:
