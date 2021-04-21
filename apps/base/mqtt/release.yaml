@@ -1,0 +1,32 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mosquitto
+  namespace: mqtt
+spec:
+  releaseName: mosquitto
+  chart:
+    spec:
+      chart: mosquitto
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home
+        namespace: flux-system
+  interval: 5m
+  install:
+    remediation:
+      retries: 3
+  values:
+    env:
+      TZ: "America/Edmonton"
+    persistence:
+      configinc:
+        enabled: true
+        storageClass: freenas-nfs-csi
+      data:
+        enabled: true
+        storageClass: freenas-iscsi-csi
+    service:
+      type: LoadBalancer
+      loadBalancerIP: 10.0.10.30
+    

@@ -7,6 +7,7 @@ resources:
   - ../base/prometheus
   - ../base/nextcloud
   - ../base/loki-stack
+  - ../base/mqtt
   - ../base/home-assistant
   - home-assistant
 patchesStrategicMerge:
