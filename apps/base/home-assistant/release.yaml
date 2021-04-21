@@ -23,12 +23,12 @@ spec:
       TZ: "America/Edmonton"
     persistence:
       config:
-        enabled: false
-        emptyDir:
-          enabled: false
-        storageClass: "-"
-        size: 15Gi
-      existingClaim: "home-assistant-config"
+        # enabled: false
+        # emptyDir:
+        #   enabled: false
+        # storageClass: "-"
+        # size: 15Gi
+        existingClaim: "home-assistant-config"
     mariadb:
       enabled: true
       primary:
