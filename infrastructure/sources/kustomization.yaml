@@ -12,3 +12,4 @@ resources:
   - jetstack.yaml
   - mittwald.yaml
   - sealed-secrets.yaml
+  - k8s-at-home.yaml

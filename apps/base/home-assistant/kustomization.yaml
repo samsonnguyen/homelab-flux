@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: home-assistant
+resources:
+  - namespace.yaml
+  - release.yaml
+  # - ../ingress
+  - ../wildcard-cert
+# patches:
+#   - target:
+#       kind: IngressRoute
+#       name: ingress
+#     path: ingress-patch.yaml
