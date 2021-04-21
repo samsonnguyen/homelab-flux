@@ -29,6 +29,13 @@ spec:
         # storageClass: "-"
         # size: 15Gi
         existingClaim: "home-assistant-config"
+    probes:
+      liveness:
+        enabled: false
+      readiness:
+        enabled: false
+      startup:
+        enabled: false
     mariadb:
       enabled: true
       primary:
