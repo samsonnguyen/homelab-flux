@@ -8,6 +8,7 @@ resources:
   - ../base/nextcloud
   - ../base/loki-stack
   - ../base/home-assistant
+  - home-assistant
 patchesStrategicMerge:
   - podinfo-values.yaml
   - prometheus-values.yaml
