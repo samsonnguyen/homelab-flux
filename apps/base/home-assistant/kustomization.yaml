@@ -4,10 +4,17 @@ namespace: home-assistant
 resources:
   - namespace.yaml
   - release.yaml
-  # - ../ingress
+  - ../ingress
   - ../wildcard-cert
-# patches:
-#   - target:
-#       kind: IngressRoute
-#       name: ingress
-#     path: ingress-patch.yaml
+patches:
+  - target:
+      kind: IngressRoute
+      name: ingress
+    patch: |-
+      - op: replace
+        path: /metadata/name
+        value: home-assistant-ingress
+  - target:
+      kind: IngressRoute
+      name: ingress
+    path: ingress-patch.yaml
