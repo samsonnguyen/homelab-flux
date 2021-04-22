@@ -5,6 +5,7 @@ metadata:
   namespace: node-red
 spec:
   releaseName: node-red
+  image: samsonnguyen/nodered-tuya-local
   chart:
     spec:
       chart: node-red
