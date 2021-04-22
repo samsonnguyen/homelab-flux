@@ -10,6 +10,7 @@ resources:
   - ../base/mqtt
   - home-assistant
   - node-red
+  - ../base/cloudflare-ddns
 patchesStrategicMerge:
   - podinfo-values.yaml
   - prometheus-values.yaml
