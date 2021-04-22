@@ -19,6 +19,7 @@ spec:
   values:
     image:
       repository: samsonnguyen/nodered-tuya-local
+      tag: latest
     env:
       PUID: "1001"
       PGID: "1001"
