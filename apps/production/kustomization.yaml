@@ -8,8 +8,8 @@ resources:
   - ../base/nextcloud
   - ../base/loki-stack
   - ../base/mqtt
-  - ../base/home-assistant
   - home-assistant
+  - node-red
 patchesStrategicMerge:
   - podinfo-values.yaml
   - prometheus-values.yaml
@@ -31,8 +31,3 @@ patches:
       name: nextcloud-ingress
       namespace: nextcloud
     path: nextcloud-ingress-patch.yaml
-  - target:
-      kind: IngressRoute
-      name: home-assistant-ingress
-      namespace: home-assistant
-    path: home-assistant-ingress-patch.yaml

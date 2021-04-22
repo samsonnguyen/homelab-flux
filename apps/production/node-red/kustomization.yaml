@@ -3,10 +3,10 @@ kind: Kustomization
 resources:
   - pvc.yaml
   - pv.yaml
-  - ../../base/home-assistant
+  - ../../base/node-red
 patches:
   - target:
       kind: IngressRoute
-      name: home-assistant-ingress
-      namespace: home-assistant
+      name: node-red-ingress
+      namespace: node-red
     path: ingressroute-patch.yaml
