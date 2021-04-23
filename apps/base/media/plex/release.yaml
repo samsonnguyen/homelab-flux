@@ -12,9 +12,6 @@ spec:
         name: k8s-at-home
         namespace: flux-system
   interval: 5m
-  install:
-    remediation:
-      retries: 3
   values:
     env:
       PUID: "1001"
