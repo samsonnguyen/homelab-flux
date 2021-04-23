@@ -34,4 +34,3 @@ spec:
           medium: Memory
         mountPath: /transcode
         size: "64Gi"
-    runAsUser: 1001

@@ -27,4 +27,3 @@ spec:
         accessMode: ReadWriteOnce
         storageClass: ""
         size: 8Ti
-    runAsUser: 1001
