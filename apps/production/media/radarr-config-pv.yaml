@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: radarr-config
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage:  15Gi
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: radarr-config
+    namespace: media
+  iscsi:
+    fsType: ext4
+    iqn: iqn.2018-10.lan.home:radarr-config
+    iscsiInterface: default
+    lun: 0
+    targetPortal: 10.0.10.10:3260
+  volumeMode: Filesystem

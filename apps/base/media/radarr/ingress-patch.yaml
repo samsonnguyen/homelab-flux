@@ -1,0 +1,3 @@
+- op: add
+  path: /spec/routes/0/services/0
+  value: {"name": "radarr", "port": 7878, "namespace": "media" }

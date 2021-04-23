@@ -1,0 +1,40 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: plex
+spec:
+  releaseName: plex
+  chart:
+    spec:
+      chart: plex
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home
+        namespace: flux-system
+  interval: 5m
+  install:
+    remediation:
+      retries: 3
+  values:
+    env:
+      PUID: "1001"
+      PGID: "1001"
+      TZ: "America/Edmonton"
+    persistence:
+      config:
+        enabled: true
+        storageClass: freenas-iscsi-csi
+        size: 15Gi
+      media:
+        enabled: true
+        accessMode: ReadWriteOnce
+        storageClass: ""
+        size: 8Ti
+      transcode:
+        enabled: true
+        emptyDir:
+          enabled: true
+          medium: Memory
+        mountPath: /transcode
+        size: "64Gi"
+    runAsUser: 1001
