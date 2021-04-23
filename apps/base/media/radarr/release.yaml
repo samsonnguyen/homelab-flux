@@ -14,8 +14,6 @@ spec:
   interval: 5m
   values:
     env:
-      PUID: "1001"
-      PGID: "1001"
       TZ: "America/Edmonton"
     persistence:
       config:
