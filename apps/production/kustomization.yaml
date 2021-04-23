@@ -11,7 +11,7 @@ resources:
   - home-assistant
   - node-red
   - ../base/cloudflare-ddns
-  - ../base/media
+  - media
 patchesStrategicMerge:
   - podinfo-values.yaml
   - prometheus-values.yaml
