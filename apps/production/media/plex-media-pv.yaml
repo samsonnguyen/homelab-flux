@@ -12,7 +12,6 @@ spec:
     kind: PersistentVolumeClaim
     name: plex-media
     namespace: media
-    size: 15Gi
   nfs:
     path: /mnt/storage_1/movies
     server: freenas-int.samsonnguyen.ca
