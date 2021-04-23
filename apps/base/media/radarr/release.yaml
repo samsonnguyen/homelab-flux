@@ -20,7 +20,7 @@ spec:
     persistence:
       config:
         enabled: true
-        storageClass: ""
+        storageClass: freenas-iscsi-csi
         size: 15Gi
       media:
         enabled: true
