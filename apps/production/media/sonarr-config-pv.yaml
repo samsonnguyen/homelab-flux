@@ -8,12 +8,12 @@ spec:
   accessModes:
   - ReadWriteOnce
   capacity:
-    storage:  15Gi
+    storage: 15Gi
   claimRef:
     apiVersion: v1
     kind: PersistentVolumeClaim
     name: sonarr-config
-    namespace: plex
+    namespace: media
   iscsi:
     fsType: ext4
     iqn: iqn.2018-10.lan.home:sonarr-config

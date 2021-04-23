@@ -7,13 +7,11 @@ metadata:
 spec:
   accessModes:
   - ReadWriteOnce
-  capacity:
-    storage:  8Ti
   claimRef:
     apiVersion: v1
     kind: PersistentVolumeClaim
     name: sonarr-media
-    namespace: plex
+    namespace: media
   nfs:
     path: /mnt/storage_1/movies
     server: freenas-int.samsonnguyen.ca
