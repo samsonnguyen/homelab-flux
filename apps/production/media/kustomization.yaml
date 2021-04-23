@@ -4,8 +4,6 @@ resources:
   - plex-media-pv.yaml
   - radarr-media-pv.yaml
   - sonarr-media-pv.yaml
-  - radarr-config-pv.yaml
-  - sonarr-config-pv.yaml
   - ../../base/media
 patches:
   - patch: |-
