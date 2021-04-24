@@ -11,3 +11,4 @@ spec:
         kind: HelmRepository
         name: openebs
         namespace: flux-system
+  interval: 1h0m0s
