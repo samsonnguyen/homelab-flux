@@ -34,5 +34,5 @@ spec:
           medium: Memory
         mountPath: /transcode
         size: "64Gi"
-  service:
-    type: LoadBalancer
+    service:
+      type: LoadBalancer
