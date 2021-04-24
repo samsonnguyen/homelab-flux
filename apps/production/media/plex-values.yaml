@@ -1,0 +1,17 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: plex
+spec:
+  values:
+    env:
+      PUID: "1001"
+      PGID: "1001"
+      TZ: "America/Edmonton"
+      ALLOWED_NETWORKS: 10.0.0.0/8,192.168.0.0/24,plex.samsonnguyen.ca
+      HOSTNAME: plex.samsonnguyen.ca
+    envValueFrom:
+      PLEX_CLAIM:
+        secretKeyRef:
+          name: plex
+          key: claim
