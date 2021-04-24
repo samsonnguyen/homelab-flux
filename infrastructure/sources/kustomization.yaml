@@ -13,3 +13,4 @@ resources:
   - mittwald.yaml
   - sealed-secrets.yaml
   - k8s-at-home.yaml
+  - openebs.yaml

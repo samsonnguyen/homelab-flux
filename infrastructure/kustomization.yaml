@@ -10,4 +10,4 @@ resources:
   - metallb
   - traefik
   - cert-manager
-  
+  - openebs
