@@ -15,3 +15,7 @@ spec:
         secretKeyRef:
           name: plex-claim
           key: claim
+
+    service:
+      type: LoadBalancer
+      loadBalancerIP: "10.0.10.32"
