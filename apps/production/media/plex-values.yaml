@@ -13,5 +13,5 @@ spec:
     envValueFrom:
       PLEX_CLAIM:
         secretKeyRef:
-          name: plex
+          name: plex-claim
           key: claim
