@@ -1,3 +1,0 @@
-- op: replace
-  path: /spec/routes/0/match
-  value: Host(`homeassist.samsonnguyen.ca`)

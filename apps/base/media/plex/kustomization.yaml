@@ -11,7 +11,6 @@ patches:
       - op: replace
         path: /metadata/name
         value: plex-ingress
-  - target:
-      kind: IngressRoute
-      name: ingress
-    path: ingress-patch.yaml
+      - op: add
+        path: /spec/routes/0/services/0
+        value: { "name": "plex", "port": 32400, "namespace": "media" }

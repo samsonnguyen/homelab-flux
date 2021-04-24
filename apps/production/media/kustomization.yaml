@@ -8,30 +8,37 @@ resources:
 patchesStrategicMerge:
   - plex-values.yaml
 patches:
-  - patch: |-
+  - target:
+      kind: IngressRoute
+      name: plex-ingress
+      namespace: media
+    patch: |-
       - op: replace
         path: /spec/routes/0/match
         value: Host(`plex.samsonnguyen.ca`)
       - op: remove
         path: /spec/routes/0/middlewares/0
-    target:
-      kind: IngressRoute
-      name: plex-ingress
-      namespace: media
-  - patch: |-
-      - op: replace
-        path: /spec/routes/0/match
-        value: Host(`sonarr.samsonnguyen.ca`)
-    target:
+  - target:
       kind: IngressRoute
       name: sonarr-ingress
       namespace: media
-  - patch: |-
+    patch: |-
       - op: replace
         path: /spec/routes/0/match
-        value: Host(`radarr.samsonnguyen.ca`)
-    target:
+        value: Host(`sonarr.samsonnguyen.ca`)
+  - target:
       kind: IngressRoute
       name: radarr-ingress
       namespace: media
-    
+    patch: |-
+      - op: replace
+        path: /spec/routes/0/match
+        value: Host(`radarr.samsonnguyen.ca`)
+  - target:
+      kind: IngressRoute
+      name: sabnzbd-ingress
+      namespace: media
+    patch: |-
+      - op: replace
+        path: /spec/routes/0/match
+        value: Host(`sabnzbd.samsonnguyen.ca`)

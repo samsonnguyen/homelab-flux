@@ -10,7 +10,7 @@ patches:
     patch: |-
       - op: replace
         path: /metadata/name
-        value: radarr-ingress
+        value: sabnzbd-ingress
       - op: add
         path: /spec/routes/0/services/0
-        value: {"name": "radarr", "port": 7878, "namespace": "media" }
+        value: {"name": "sabnzbd", "port": 8080, "namespace": "media" } 

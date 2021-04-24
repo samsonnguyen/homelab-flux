@@ -6,3 +6,4 @@ resources:
   - radarr
   - sonarr
   - plex
+  - sabnzbd

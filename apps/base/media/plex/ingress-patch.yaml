@@ -1,3 +1,0 @@
-- op: add
-  path: /spec/routes/0/services/0
-  value: { "name": "plex", "port": 32400, "namespace": "media" }

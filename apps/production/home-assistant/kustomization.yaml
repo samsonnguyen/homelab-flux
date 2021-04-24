@@ -9,4 +9,7 @@ patches:
       kind: IngressRoute
       name: home-assistant-ingress
       namespace: home-assistant
-    path: ingressroute-patch.yaml
+    patch: |-
+      - op: replace
+        path: /spec/routes/0/match
+        value: Host(`homeassist.samsonnguyen.ca`)

@@ -1,0 +1,27 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: sabnzbd
+spec:
+  releaseName: sabnzbd
+  chart:
+    spec:
+      chart: sabnzbd
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home
+        namespace: flux-system
+  interval: 5m
+  values:
+    env:
+      TZ: "America/Edmonton"
+    persistence:
+      config:
+        enabled: true
+        storageClass: local-hostpath
+        size: 15Gi
+      media:
+        enabled: true
+        accessMode: ReadWriteOnce
+        storageClass: ""
+        size: 8Ti
