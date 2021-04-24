@@ -5,6 +5,8 @@ resources:
   - radarr-media-pv.yaml
   - sonarr-media-pv.yaml
   - ../../base/media
+patchesStrategicMerge:
+  - plex-values.yaml
 patches:
   - patch: |-
       - op: replace
