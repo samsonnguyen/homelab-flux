@@ -4,6 +4,7 @@ resources:
   - plex-media-pv.yaml
   - radarr-media-pv.yaml
   - sonarr-media-pv.yaml
+  - sabnzbd-media-pv.yaml
   - ../../base/media
 patchesStrategicMerge:
   - plex-values.yaml
