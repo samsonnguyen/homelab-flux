@@ -15,3 +15,11 @@ spec:
   install:
     remediation:
       retries: 3
+  values:
+    logs:
+      general:
+        access:
+          enabled: true
+    ports:
+      traefik:
+        expose: true
