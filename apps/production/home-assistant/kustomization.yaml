@@ -4,12 +4,14 @@ resources:
   - pvc.yaml
   - pv.yaml
   - ../../base/home-assistant
-patches:
-  - target:
-      kind: IngressRoute
-      name: home-assistant-ingress
-      namespace: home-assistant
-    patch: |-
-      - op: replace
-        path: /spec/routes/0/match
-        value: Host(`homeassist.samsonnguyen.ca`)
+patchesStrategicMerge:
+  - home-assistant-values.yaml
+# patches:
+#   - target:
+#       kind: IngressRoute
+#       name: home-assistant-ingress
+#       namespace: home-assistant
+#     patch: |-
+#       - op: replace
+#         path: /spec/routes/0/match
+#         value: Host(`homeassist.samsonnguyen.ca`)
