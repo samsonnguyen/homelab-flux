@@ -7,9 +7,15 @@ spec:
   values:
     ingress:
       enabled: true
+      hosts:
+      - host: homeassist.samsonnguyen.ca
+        paths:
+          - path: /
       annotations:
         kubernetes.io/ingress.class: traefik
         cert-manager.io/cluster-issuer: letsencrypt-staging
         traefik.ingress.kubernetes.io/router.entrypoints: websecure
-      hosts:
-        - host: homeassist.samsonnguyen.ca
+      tls:
+        - secretName: homeassist-samsonnguyen-ca-tls
+          hosts:
+            - homeassist.samsonnguyen.ca
