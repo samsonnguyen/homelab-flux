@@ -19,6 +19,6 @@ patches:
         value: chevereto-ingress
       - op: add
         path: /spec/routes/0/services/0
-        value: {"name": "chevereto", "port": "web", "namespace": "chevereto" }
+        value: {"name": "chevereto-service", "port": "web", "namespace": "chevereto" }
       - op: remove
         path: /spec/routes/0/middlewares/0
