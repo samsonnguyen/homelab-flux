@@ -1,0 +1,25 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mariadb
+  namespace: chevereto
+spec:
+  releaseName: mariadb
+  chart:
+    spec:
+      chart: mariadb
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami
+        namespace: flux-system
+  interval: 5m
+  install:
+    remediation:
+      retries: 3
+  values:
+    global:
+      storageClass: freenas-iscsi-csi
+    auth:
+      existingSecret: chevereto-mariadb
+      database: chevereto
+      username: chevereto

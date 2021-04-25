@@ -12,6 +12,7 @@ resources:
   - node-red
   - ../base/cloudflare-ddns
   - media
+  - ../base/chevereto
 patchesStrategicMerge:
   - podinfo-values.yaml
   - prometheus-values.yaml
