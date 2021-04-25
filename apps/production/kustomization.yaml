@@ -8,11 +8,11 @@ resources:
   - ../base/nextcloud
   - ../base/loki-stack
   - ../base/mqtt
+  - ../base/cloudflare-ddns
   - home-assistant
   - node-red
-  - ../base/cloudflare-ddns
   - media
-  - ../base/chevereto
+  - chevereto
 patchesStrategicMerge:
   - podinfo-values.yaml
   - prometheus-values.yaml

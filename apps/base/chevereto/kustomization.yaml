@@ -4,3 +4,21 @@ namespace: chevereto
 resources:
   - namespace.yaml
   - mysql-release.yaml
+  - chevereto-deployment.yaml
+  - chevereto-pvc.yaml
+  - chevereto-service.yaml
+  - ../wildcard-cert
+  - ../ingress
+patches:
+  - target:
+      kind: IngressRoute
+      name: ingress
+    patch: |-
+      - op: replace
+        path: /metadata/name
+        value: chevereto-ingress
+      - op: add
+        path: /spec/routes/0/services/0
+        value: {"name": "chevereto", "port": "web", "namespace": "chevereto" }
+      - op: remove
+        path: /spec/routes/0/middlewares/0

@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chevereto
+  namespace: chevereto
+spec:
+  selector:
+    matchLabels:
+      app: chevereto
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: chevereto
+    spec:
+      containers:
+      - env:
+        - name: CHEVERETO_DB_HOST
+          value: maridadb
+        - name: CHEVERETO_DB_NAME
+          value: chevereto
+        - name: CHEVERETO_DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: chevereto-mariadb
+              key: mariadb-password
+        - name: CHEVERETO_DB_PREFIX
+          value: chv_
+        - name: CHEVERETO_DB_USERNAME
+          value: chevereto
+        image: nmtan/chevereto:latest
+        imagePullPolicy: Always
+        name: chevereto
+        resources:
+        #  requests:
+        #    cpu: 2
+        #    memory: 2.5Gi
+        #    ephemeral-storage: 50M
+        #  limits: 
+        #    cpu: 2
+        #    memory: 2.5Gi
+        #    ephemeral-storage: 50M
+        volumeMounts:
+        - mountPath: /var/www/html/images
+          name: chevereto-images
+          subPath: images
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: chevereto-images
+        persistentVolumeClaim:
+          claimName: chevereto
