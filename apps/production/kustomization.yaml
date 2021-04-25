@@ -3,7 +3,6 @@ kind: Kustomization
 resources:
   - cert-manager
   - ../base/traefik-middleware
-  - ../base/podinfo
   - ../base/prometheus
   - ../base/nextcloud
   - ../base/loki-stack
@@ -14,7 +13,6 @@ resources:
   - media
   - chevereto
 patchesStrategicMerge:
-  - podinfo-values.yaml
   - prometheus-values.yaml
   - nextcloud-values.yaml
   - loki-stack-values.yaml
@@ -23,14 +21,24 @@ patches:
       kind: IngressRoute
       name: prometheus-ingress
       namespace: prometheus
-    path: prometheus-ingress-patch.yaml
+    patch: |-
+      - op: replace
+        path: /spec/routes/0/match
+        value: Host(`metrics.samsonnguyen.ca`)
   - target:
       kind: IngressRoute
       name: grafana-ingress
       namespace: prometheus
-    path: grafana-ingress-patch.yaml
+    patch: |-
+      - op: replace
+        path: /spec/routes/0/match
+        value: Host(`grafana.samsonnguyen.ca`)
   - target:
       kind: IngressRoute
       name: nextcloud-ingress
       namespace: nextcloud
-    path: nextcloud-ingress-patch.yaml
+    patch: |-
+      - op: replace
+        path: /spec/routes/0/match
+        value: Host(`cloud.samsonnguyen.ca`)
+

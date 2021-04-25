@@ -10,3 +10,4 @@ spec:
   dnsNames:
   - '*.samsonnguyen.ca'
   - samsonnguyen.ca
+  - home.samsonnguyen.ca
