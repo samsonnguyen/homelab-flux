@@ -17,7 +17,7 @@ spec:
       containers:
       - env:
         - name: CHEVERETO_DB_HOST
-          value: maridadb
+          value: mariadb
         - name: CHEVERETO_DB_NAME
           value: chevereto
         - name: CHEVERETO_DB_PASSWORD
