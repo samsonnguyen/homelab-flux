@@ -18,8 +18,9 @@ spec:
   values:
     logs:
       general:
-        access:
-          enabled: true
+        level: DEBUG
+      access:
+        enabled: true
     ports:
       traefik:
         expose: true
