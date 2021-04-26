@@ -13,7 +13,6 @@ spec:
   - sabnzbd.samsonnguyen.ca
   - metrics.samsonnguyen.ca
   - grafana.samsonnguyen.ca
-  - sabnzbd.samsonnguyen.ca
   - sonarr.samsonnguyen.ca
   - radarr.samsonnguyen.ca
   - cloud.samsonnguyen.ca
