@@ -3,7 +3,6 @@ kind: Kustomization
 namespace: flux-system
 resources:
   - bitnami.yaml
-  - podinfo.yaml
   - prometheus-community.yaml
   - nextcloud.yaml
   - democratic-csi.yaml
