@@ -2,11 +2,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: traefik-sso
-  labels:
-    app: traefik-sso
+  namespace: traefik
 spec:
+  template:
     spec:
       containers:
+      - name: traefik-sso
         env:
         - name: AUTH_HOST
           value: auth.samsonnguyen.ca

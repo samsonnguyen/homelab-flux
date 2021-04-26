@@ -2,9 +2,13 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: traefik-sso
+  namespace: traefik
   labels:
     app: traefik-sso
 spec:
+  selector:
+    matchLabels:
+      app: traefik-sso
   template:
     metadata:
       labels:
