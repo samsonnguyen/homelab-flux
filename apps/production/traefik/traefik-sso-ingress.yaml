@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    kubernetes.io/ingress.class: traefik
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    traefik.ingress.kubernetes.io/router.tls: "true"
+    traefik.ingress.kubernetes.io/router.middlewares: traefik-sso@kubernetescrd
+  name: traefik-sso
+  namespace: traefik
+spec:
+  rules:
+  - host: auth.samsonnguyen.ca
+    http:
+      paths:
+      - backend:
+          service:
+            name: traefik-sso
+            port:
+              number: 4181
+        path: /
+        pathType: Prefix
+  tls:
+  - hosts:
+    - auth.samsonnguyen.ca
+    secretName: auth-samsonnguyen-ca-tls

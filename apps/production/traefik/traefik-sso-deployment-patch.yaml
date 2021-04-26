@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: traefik-sso
+  labels:
+    app: traefik-sso
+spec:
+    spec:
+      containers:
+        env:
+        - name: AUTH_HOST
+          value: auth.samsonnguyen.ca
+        - name: WHITELIST
+          value: samosnn1@gmail.com
+        - name: COOKIE_DOMAIN
+          value: samsonnguyen.ca
