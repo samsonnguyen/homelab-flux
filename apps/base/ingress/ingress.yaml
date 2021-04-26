@@ -17,3 +17,5 @@ spec:
         namespace: traefik
   tls:
     secretName: wildcard-samsonnguyen-ca
+    domains:
+      - main: samsonnguyen.ca
