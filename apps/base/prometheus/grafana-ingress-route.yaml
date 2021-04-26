@@ -14,7 +14,7 @@ spec:
           port: 80
           namespace: prometheus
       middlewares:
-      - name: basic-auth
+      - name: sso
         namespace: traefik
       - name: redirect-scheme
         namespace: traefik
