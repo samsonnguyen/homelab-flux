@@ -5,7 +5,7 @@ resources:
   - namespace.yaml
   - release.yaml
   - ../ingress
-  - ../wildcard-cert
+  # - ../wildcard-cert
 patches:
   - target:
       kind: IngressRoute

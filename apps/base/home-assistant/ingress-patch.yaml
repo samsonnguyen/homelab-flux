@@ -1,5 +1,0 @@
-- op: add
-  path: /spec/routes/0/services/0
-  value: {"name": "home-assistant", "port": 8123, "namespace": "home-assistant" }
-- op: remove
-  path: /spec/routes/0/middlewares/0
