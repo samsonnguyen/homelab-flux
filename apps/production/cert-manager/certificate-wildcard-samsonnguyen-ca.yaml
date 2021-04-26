@@ -8,15 +8,5 @@ spec:
     name: letsencrypt-prod
     kind: ClusterIssuer
   dnsNames:
-  - plex.samsonnguyen.ca
-  - nodered.samsonnguyen.ca
-  - sabnzbd.samsonnguyen.ca
-  - metrics.samsonnguyen.ca
-  - grafana.samsonnguyen.ca
-  - sonarr.samsonnguyen.ca
-  - radarr.samsonnguyen.ca
-  - cloud.samsonnguyen.ca
-  - homeassist.samsonnguyen.ca
-  - zwave.samsonnguyen.ca
-  - zwave2.samsonnguyen.ca
-  - unifi.samsonnguyen.ca
+  - "*.samsonnguyen.ca"
+  - "samsonnguyen.ca"
