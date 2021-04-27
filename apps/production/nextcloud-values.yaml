@@ -17,11 +17,14 @@ spec:
       size: 500Gi
     metrics:
       enabled: true
+      https: true
     nextcloud:
       host: cloud.samsonnguyen.ca
       extraEnv:
         - name: OVERWRITEPROTOCOL
           value: https
+      existingSecret:
+        secretName: nextcloud-users
     postgresql:
       enabled: true
       persistence:
