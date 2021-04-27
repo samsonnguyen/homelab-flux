@@ -19,4 +19,4 @@ spec:
     persistence:
       config:
         enabled: true
-        storageClass: freenas-nfs-csi
+        storageClass: local-hostpath
