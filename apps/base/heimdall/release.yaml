@@ -1,0 +1,22 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: heimdall
+  namespace: heimdall
+spec:
+  chart:
+    spec:
+      chart: heimdall
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home
+        namespace: flux-system
+  interval: 1m0s
+  values:
+    env:
+      TZ: "America/Edmonton"
+    persistence:
+      config:
+        enabled: true
+        storageClass: freenas-nfs-csi

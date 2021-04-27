@@ -12,6 +12,7 @@ resources:
   - node-red
   - media
   - chevereto
+  - heimdall
 patchesStrategicMerge:
   - prometheus-values.yaml
   - nextcloud-values.yaml
