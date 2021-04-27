@@ -5,6 +5,9 @@ metadata:
   namespace: heimdall
 spec:
   values:
+    env:
+      PUID: "1001"
+      PGID: "1001"
     ingress:
       enabled: true
       hosts:
