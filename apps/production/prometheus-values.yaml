@@ -18,11 +18,10 @@ spec:
       grafana.ini:
         server:
           root_url: https://grafana.samsonnguyen.ca
-        auth:
-          anonymous:
-            enabled: true
-            org_name: admin
-            org_role: Admin
+        auth.anonymous:
+          enabled: true
+          org_name: admin
+          org_role: Admin
     prometheus:
       ingress:
         enabled: false
