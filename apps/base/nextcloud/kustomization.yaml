@@ -4,18 +4,4 @@ namespace: nextcloud
 resources:
   - namespace.yaml
   - release.yaml
-  - ../ingress
-  # - ../wildcard-cert
   - redirectregex-middleware.yaml
-patches:
-  - target:
-      kind: IngressRoute
-      name: ingress
-    patch: |-
-      - op: replace
-        path: /metadata/name
-        value: nextcloud-ingress
-  - target:
-      kind: IngressRoute
-      name: ingress
-    path: ingress-patch.yaml

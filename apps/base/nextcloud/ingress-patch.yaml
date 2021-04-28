@@ -1,8 +1,0 @@
-- op: add
-  path: /spec/routes/0/services/0
-  value: {"name": "nextcloud", "port": 8080, "namespace": "nextcloud" }
-- op: remove
-  path: /spec/routes/0/middlewares/0
-- op: add
-  path: /spec/routes/0/middlewares/-
-  value: {"name": "nextcloud-redirectregex", "namespace": "nextcloud"}
