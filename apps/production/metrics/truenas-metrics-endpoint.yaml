@@ -1,0 +1,10 @@
+kind: Endpoints
+apiVersion: v1
+metadata:
+ name: freenas-metrics
+subsets:
+  - addresses:
+    - ip: 10.0.10.61
+    ports:
+    - name: metrics
+      port: 9273

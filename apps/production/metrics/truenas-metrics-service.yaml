@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: truenas-metrics
+  labels:
+    samsonnguyen.ca/host: truenas-int
+spec:
+  type: ClusterIP
+  ports:
+    - name: metrics
+      port: 9273
+      targetPort: 9273

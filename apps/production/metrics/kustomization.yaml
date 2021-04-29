@@ -3,5 +3,7 @@ kind: Kustomization
 namespace: metrics
 resources:
   - namespace.yaml
-  - service.yaml
-  - endpoint.yaml
+  - pve2-metrics-service.yaml
+  - pve2-metrics-endpoint.yaml
+  - truenas-metrics-service.yaml
+  - truenas-metrics-endpoint.yaml
