@@ -21,3 +21,9 @@ spec:
         - secretName: homeassist-samsonnguyen-ca-tls
           hosts:
             - homeassist.samsonnguyen.ca
+    prometheus:
+      serviceMonitor:
+        enabled: true
+        bearerTokenSecret:
+          name: prometheus-access-token
+          key: access_token
