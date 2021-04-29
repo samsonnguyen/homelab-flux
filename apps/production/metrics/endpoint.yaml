@@ -1,0 +1,10 @@
+kind: Endpoints
+apiVersion: v1
+metadata:
+ name: pve2-metrics
+subsets:
+  - addresses:
+    - ip: 10.0.10.2
+      ports:
+      - name: metrics
+        port: 9273

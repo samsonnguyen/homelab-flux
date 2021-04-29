@@ -40,3 +40,12 @@ spec:
           selector:
             matchLabels:
               app.kubernetes.io/instance: nextcloud
+        - name: pve2-metrics
+          endpoints:
+          - path: metrics
+            port: metrics
+          namespaceSelector:
+            matchNames:
+            - metrics
+          selector:
+            app: pve2-metrics
