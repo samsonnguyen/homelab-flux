@@ -48,4 +48,5 @@ spec:
             matchNames:
             - metrics
           selector:
-            app: pve2-metrics
+            matchLabels:
+              samsonnguyen.ca/host: pve2-int

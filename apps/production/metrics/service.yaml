@@ -1,10 +1,12 @@
 kind: Service
 apiVersion: v1
 metadata:
- name: pve2-metrics
+  name: pve2-metrics
+  labels:
+    samsonnguyen.ca/host: pve2-int
 spec:
- type: ClusterIP
- ports:
- - name: metrics
-   port: 9273
-   targetPort: 9273
+  type: ClusterIP
+  ports:
+    - name: metrics
+      port: 9273
+      targetPort: 9273
