@@ -27,3 +27,16 @@ spec:
         enabled: false
       prometheusSpec:
         serviceMonitorSelectorNilUsesHelmValues: false
+      additionalServiceMonitors:
+        - name: nextcloud
+          endpoints:
+          - path: metrics
+            port: metrics
+          namespaceSelector:
+            matchNames:
+            - nextcloud
+          podTargetLabels:
+          - app.kubernetes.io/component=metrics
+          selector:
+            matchLabels:
+              app.kubernetes.io/instance: nextcloud
