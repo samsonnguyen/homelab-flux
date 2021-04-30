@@ -4,7 +4,7 @@ metadata:
  name: truenas-metrics
 subsets:
   - addresses:
-    - ip: 10.0.10.61
+    - ip: 10.0.10.10
     ports:
     - name: metrics
       port: 9273
