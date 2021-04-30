@@ -1,0 +1,21 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: graphite
+spec:
+  chart:
+    spec:
+      chart: graphite
+      sourceRef:
+        kind: HelmRepository
+        name: kiwigrid
+        namespace: flux-system
+  interval: 1m0s
+  values:
+    persistence:
+      enabled: true
+      storageClass: local-hostpath
+    service:
+      type: LoadBalancer
+    timeZone: America/Edmonton
