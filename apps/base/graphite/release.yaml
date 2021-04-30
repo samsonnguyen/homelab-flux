@@ -16,6 +16,4 @@ spec:
     persistence:
       enabled: true
       storageClass: local-hostpath
-    service:
-      type: LoadBalancer
     timeZone: America/Edmonton
