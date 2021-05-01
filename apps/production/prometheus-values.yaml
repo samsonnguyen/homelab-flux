@@ -50,3 +50,15 @@ spec:
           selector:
             matchLabels:
               samsonnguyen.ca/host: pve2-int
+        - name: treafik
+          endpoints:
+          - path: metrics
+            port: web
+          namespaceSelector:
+            matchNames:
+            - traefik
+          podTargetLabels:
+          - app.kubernetes.io/instance=traefik
+          selector:
+            matchLabels:
+              app.kubernetes.io/instance: treafik
