@@ -24,3 +24,5 @@ spec:
     ports:
       traefik:
         expose: true
+    additionalArguments:
+      - --metrics.prometheus=true
