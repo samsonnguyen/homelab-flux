@@ -50,7 +50,7 @@ spec:
           selector:
             matchLabels:
               samsonnguyen.ca/host: pve2-int
-        - name: treafik
+        - name: traefik
           endpoints:
           - path: metrics
             port: traefik
@@ -59,4 +59,4 @@ spec:
             - traefik
           selector:
             matchLabels:
-              app.kubernetes.io/instance: treafik
+              app.kubernetes.io/instance: traefik
