@@ -53,7 +53,7 @@ spec:
         - name: treafik
           endpoints:
           - path: metrics
-            port: web
+            port: traefik
           namespaceSelector:
             matchNames:
             - traefik
