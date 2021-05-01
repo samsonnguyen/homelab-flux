@@ -18,7 +18,6 @@ spec:
     metrics:
       enabled: true
       https: true
-      timeout: 15
     nextcloud:
       host: cloud.samsonnguyen.ca
       extraEnv:
