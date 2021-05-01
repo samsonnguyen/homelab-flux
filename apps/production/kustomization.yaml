@@ -15,6 +15,7 @@ resources:
   - heimdall
   - metrics
   - ../base/graphite
+  - zwave
 patchesStrategicMerge:
   - prometheus-values.yaml
   - nextcloud-values.yaml
