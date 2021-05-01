@@ -50,13 +50,3 @@ spec:
           selector:
             matchLabels:
               samsonnguyen.ca/host: pve2-int
-        - name: truenas-metrics
-          endpoints:
-          - path: metrics
-            port: metrics
-          namespaceSelector:
-            matchNames:
-            - metrics
-          selector:
-            matchLabels:
-              samsonnguyen.ca/host: truenas-int
