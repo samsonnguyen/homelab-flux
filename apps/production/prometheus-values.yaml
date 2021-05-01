@@ -57,8 +57,6 @@ spec:
           namespaceSelector:
             matchNames:
             - traefik
-          podTargetLabels:
-          - app.kubernetes.io/instance=traefik
           selector:
             matchLabels:
               app.kubernetes.io/instance: treafik
