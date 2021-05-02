@@ -16,6 +16,7 @@ resources:
   - metrics
   - ../base/graphite
   - zwave
+  - apaxy
 patchesStrategicMerge:
   - prometheus-values.yaml
   - nextcloud-values.yaml

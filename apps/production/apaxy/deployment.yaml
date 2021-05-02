@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: apaxy
+  name: apaxy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: http-server
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: http-server
+    spec:
+      containers:
+      - image: fusengine/apaxy
+        imagePullPolicy: Always
+        name: apaxy
+        resources: {}
+        ports:
+          - containerPort: 80
+        volumeMounts:
+          - mountPath: /app/web
+            name: movies-data
+      volumes:
+        - name: movies-data
+          nfs:
+            path: /mnt/storage_1/movies
+            server: freenas-int.samsonnguyen.ca
