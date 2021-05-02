@@ -3,6 +3,7 @@ kind: Kustomization
 namespace: chevereto
 resources:
   - namespace.yaml
+  - configmap.yaml
   - mysql-release.yaml
   - chevereto-deployment.yaml
   - chevereto-pvc.yaml
