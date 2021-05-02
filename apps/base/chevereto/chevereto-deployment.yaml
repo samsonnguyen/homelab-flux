@@ -46,7 +46,7 @@ spec:
           name: chevereto-images
           subPath: images
         - name: php-ini
-          mountPath: /usr/local/etc/php
+          mountPath: /usr/local/etc/php/php.ini
       restartPolicy: Always
       schedulerName: default-scheduler
       securityContext: {}
@@ -60,4 +60,3 @@ spec:
           name: chevereto-php-ini
           items:
           - key: php.ini
-            path: php.ini
