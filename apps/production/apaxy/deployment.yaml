@@ -8,13 +8,13 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: http-server
+      app: apaxy
   strategy:
     type: RollingUpdate
   template:
     metadata:
       labels:
-        app: http-server
+        app: apaxy
     spec:
       containers:
       - image: fusengine/apaxy
