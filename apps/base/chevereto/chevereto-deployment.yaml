@@ -47,6 +47,7 @@ spec:
           subPath: images
         - name: php-ini
           mountPath: /usr/local/etc/php
+          subPath: php.ini
           readOnly: true
       restartPolicy: Always
       schedulerName: default-scheduler
