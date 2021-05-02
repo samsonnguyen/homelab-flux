@@ -46,7 +46,7 @@ spec:
           name: chevereto-images
           subPath: images
         - name: php-ini
-          mountPath: /usr/local/etc/php
+          mountPath: /usr/local/etc/php/php.ini
           subPath: php.ini
           readOnly: true
       restartPolicy: Always
