@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: unifi-poller
+  namespace: monitoring
+  labels:
+    app: unifi-poller
+    type: poller
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: unifi-poller
+      type: poller
+  template:
+    metadata:
+      labels:
+        app: unifi-poller
+        type: poller
+      annotations:
+        prometheus.io/path: /metrics
+        prometheus.io/port: "9130"
+        prometheus.io/scrape: "true"
+    spec:
+      containers:
+      - name: unifi-poller
+        image: golift/unifi-poller:latest
+        ports:
+        - containerPort: 9130
+          name: tcp
+          protocol: TCP
+        - containerPort: 9130
+          name: udp
+          protocol: UDP
+        volumeMounts:
+        - name: config-volume
+          mountPath: /config/unifi-poller.conf
+          subPath: unifi-poller.conf
+        env:
+        - name: UP_UNIFI_DEFAULT_URL
+          valueFrom:
+            secretKeyRef:
+              name: unifi-poller
+              key: unifi_default_url
+        - name: UP_UNIFI_DEFAULT_USER
+          valueFrom:
+            secretKeyRef:
+              name: unifi-poller
+              key: unifi_default_user
+        - name: UP_UNIFI_DEFAULT_PASS
+          valueFrom:
+            secretKeyRef:
+              name: unifi-poller
+              key: unifi_default_pass
+      volumes:
+      - name: config-volume
+        configMap:
+          name: unifi-poller

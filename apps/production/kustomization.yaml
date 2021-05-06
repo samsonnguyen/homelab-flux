@@ -17,6 +17,7 @@ resources:
   - ../base/graphite
   - zwave
   - apaxy
+  - unifi-poller
 patchesStrategicMerge:
   - prometheus-values.yaml
   - nextcloud-values.yaml

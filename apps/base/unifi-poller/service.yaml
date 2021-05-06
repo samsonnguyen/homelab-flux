@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: unifi-poller
+spec:
+  selector:
+    app: unifi-poller
+  ports:
+  - protocol: TCP
+    port: 9130
+    targetPort: 9130
+  - protocol: UDP
+    port: 9130
+    targetPort: 9130
