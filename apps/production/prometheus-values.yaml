@@ -62,3 +62,13 @@ spec:
           selector:
             matchLabels:
               app.kubernetes.io/instance: traefik
+        - name: unifi-poller
+          endpoints:
+          - path: metrics
+            port: metrics-tcp
+          namespaceSelector:
+            matchNames:
+            - unifi-poller
+          selector:
+            matchLabels:
+              samsonnguyen.ca/instance: unifi-poller

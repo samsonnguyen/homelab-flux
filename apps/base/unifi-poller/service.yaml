@@ -2,6 +2,8 @@ kind: Service
 apiVersion: v1
 metadata:
   name: unifi-poller
+  labels:
+    samsonnguyen.ca/instance: unifi-poller
 spec:
   selector:
     app: unifi-poller
