@@ -7,8 +7,10 @@ spec:
     app: unifi-poller
   ports:
   - protocol: TCP
+    name: metrics-tcp
     port: 9130
     targetPort: 9130
   - protocol: UDP
+    name: metrics-udp
     port: 9130
     targetPort: 9130
