@@ -4,6 +4,8 @@ resources:
   - pvc.yaml
   - pv.yaml
   - ../../base/node-red
+patchesStrategicMerge:
+  - node-red-values.yaml
 patches:
   - target:
       kind: IngressRoute
