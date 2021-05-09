@@ -6,7 +6,7 @@ resources:
   - ../base/prometheus
   - ../base/nextcloud
   - ../base/loki-stack
-  - ../base/mqtt
+  - mqtt
   - ../base/cloudflare-ddns
   - home-assistant
   - node-red

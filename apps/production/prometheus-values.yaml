@@ -29,6 +29,14 @@ spec:
         enabled: false
       prometheusSpec:
         serviceMonitorSelectorNilUsesHelmValues: false
+        resources:
+          requests:
+            memory: 800Mi
+            cpu: 400m
+          limits:
+            memory: 1200Mi
+            cpu: 1500m
+        retention: 10d
       additionalServiceMonitors:
         - name: nextcloud
           endpoints:
