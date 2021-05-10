@@ -11,3 +11,4 @@ resources:
   - traefik
   - cert-manager
   - openebs
+  - node-feature-discovery
