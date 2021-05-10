@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: traefik-sso
-        image: thomseddon/traefik-forward-auth:2
+        image: thomseddon/traefik-forward-auth:latest
         imagePullPolicy: Always
         env:
         - name: PROVIDERS_GOOGLE_CLIENT_ID
