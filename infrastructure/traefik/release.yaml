@@ -26,3 +26,6 @@ spec:
         expose: true
     additionalArguments:
       - --metrics.prometheus=true
+    service:
+      spec:
+        externalTrafficPolicy: Local
