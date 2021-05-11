@@ -31,7 +31,6 @@ spec:
       supplementalGroups:
       - 998
       - 39
-
     resources:
       requests:
         # Hardware acceleration using an Intel iGPU w/ QuickSync and
