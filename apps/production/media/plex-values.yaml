@@ -15,7 +15,32 @@ spec:
         secretKeyRef:
           name: plex-claim
           key: claim
-
     service:
       type: LoadBalancer
       loadBalancerIP: "10.0.10.32"
+    podSecurityContext:
+      runAsUser: 1001
+      runAsGroup: 1001
+      fsGroup: 1001
+      # Hardware acceleration using an Intel iGPU w/ QuickSync
+      # These IDs below should be matched to your `video` and `render` group on the host
+      # To obtain those IDs run the following grep statement on the host:
+      # $ cat /etc/group | grep "video\|render"
+      # video:x:44:
+      # render:x:109:
+      supplementalGroups:
+      - 998
+      - 39
+
+    resources:
+      requests:
+        # Hardware acceleration using an Intel iGPU w/ QuickSync and
+        # using intel-gpu-plugin (https://github.com/intel/intel-device-plugins-for-kubernetes)
+        gpu.intel.com/i915: 1
+        cpu: 400m
+        memory: 1024Mi
+      limits:
+        # Hardware acceleration using an Intel iGPU w/ QuickSync and
+        # using intel-gpu-plugin (https://github.com/intel/intel-device-plugins-for-kubernetes)
+        gpu.intel.com/i915: 1
+        memory: 4096Mi
