@@ -1,0 +1,10 @@
+kind: Endpoints
+apiVersion: v1
+metadata:
+ name: kube-worker2-metrics
+subsets:
+  - addresses:
+    - ip: 10.0.10.12
+    ports:
+    - name: metrics
+      port: 9273

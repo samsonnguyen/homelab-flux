@@ -5,3 +5,5 @@ resources:
   - namespace.yaml
   - pve2-metrics-service.yaml
   - pve2-metrics-endpoint.yaml
+  - kube-worker2-metrics-service.yaml
+  - kube-worker2-metrics-endpoint.yaml

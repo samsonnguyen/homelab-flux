@@ -80,3 +80,13 @@ spec:
           selector:
             matchLabels:
               samsonnguyen.ca/instance: unifi-poller
+        - name: kube-worker2-metrics
+          endpoints:
+          - path: metrics
+            port: metrics
+          namespaceSelector:
+            matchNames:
+            - metrics
+          selector:
+            matchLabels:
+              samsonnguyen.ca/host: kube-worker2

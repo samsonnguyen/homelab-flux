@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: kube-worker2-metrics
+  labels:
+    samsonnguyen.ca/host: kube-worker2
+spec:
+  type: ClusterIP
+  ports:
+    - name: metrics
+      port: 9273
+      targetPort: 9273
