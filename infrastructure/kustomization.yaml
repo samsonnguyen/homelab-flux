@@ -12,3 +12,4 @@ resources:
   - cert-manager
   - openebs
   - node-feature-discovery
+  - intel-gpu-plugin
