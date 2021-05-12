@@ -5,6 +5,7 @@ metadata:
 spec:
   releaseName: plex
   chart:
+    version: 4.4.0
     spec:
       chart: plex
       sourceRef:
