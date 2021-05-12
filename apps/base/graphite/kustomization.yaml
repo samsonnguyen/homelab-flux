@@ -4,3 +4,4 @@ namespace: graphite
 resources:
   - namespace.yaml
   - release.yaml
+  - service-tcp.yaml
