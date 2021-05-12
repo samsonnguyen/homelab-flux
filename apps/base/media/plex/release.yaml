@@ -5,13 +5,13 @@ metadata:
 spec:
   releaseName: plex
   chart:
-    version: 4.4.0
     spec:
       chart: plex
       sourceRef:
         kind: HelmRepository
         name: k8s-at-home
         namespace: flux-system
+      version: "4.4.0"
   interval: 5m
   values:
     env:
