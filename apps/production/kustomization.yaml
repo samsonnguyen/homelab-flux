@@ -14,7 +14,7 @@ resources:
   - chevereto
   - heimdall
   - metrics
-  - ../base/graphite
+  - graphite
   - zwave
   - apaxy
   - unifi-poller
