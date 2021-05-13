@@ -18,6 +18,7 @@ resources:
   - zwave
   - apaxy
   - unifi-poller
+  - huginn
 patchesStrategicMerge:
   - prometheus-values.yaml
   - nextcloud-values.yaml
