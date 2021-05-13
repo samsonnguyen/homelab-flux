@@ -10,8 +10,7 @@ spec:
       hosts:
       - host: huginn.samsonnguyen.ca
         paths:
-          - path: /
-            pathType: Prefix
+          - /
       annotations:
         kubernetes.io/ingress.class: traefik
         cert-manager.io/cluster-issuer: letsencrypt-prod
@@ -24,4 +23,4 @@ spec:
     mysql:
       primary:
         persistence:
-          storageClass: openebs-jiva-default
+          storageClass: openebs-jiva
