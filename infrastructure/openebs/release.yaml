@@ -12,3 +12,6 @@ spec:
         name: openebs
         namespace: flux-system
   interval: 1h0m0s
+  values:
+    jiva:
+      replicas: 2
