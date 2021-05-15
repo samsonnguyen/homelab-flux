@@ -18,3 +18,6 @@ patches:
       - op: add
         path: /spec/routes/0/services/0
         value: {"name": "zwave2", "port": 8091, "namespace": "zwave" }
+      - op: add
+        path: /spec/routes/0/middlewares/-
+        value: {"name": "basic-auth", "namespace": "traefik" }
