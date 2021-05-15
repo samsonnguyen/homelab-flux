@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base/node-red
+  - paperless-consume-pvc.yaml
+  - paperless-consume-pv.yaml
+  - paperless-media-pvc.yaml
+  - paperless-media-pv.yaml
+patchesStrategicMerge:
+  - paperless-values.yaml
