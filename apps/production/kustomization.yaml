@@ -19,6 +19,7 @@ resources:
   - apaxy
   - unifi-poller
   - huginn
+  - paperless
 patchesStrategicMerge:
   - prometheus-values.yaml
   - nextcloud-values.yaml
