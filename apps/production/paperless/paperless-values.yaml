@@ -9,6 +9,8 @@ spec:
       data:
         enabled: true
         storageClass: openebs-jiva
+        accessMode: ReadWriteOnce
+        size: 5Gi
       media:
         enabled: true
         existingClaim: paperless-media
