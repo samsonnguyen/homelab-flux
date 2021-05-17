@@ -5,6 +5,8 @@ metadata:
   namespace: paperless
 spec:
   values:
+    env:
+      PAPERLESS_CONSUMPTION_DIR: /usr/src/paperless/consume/documents
     persistence:
       data:
         enabled: true
