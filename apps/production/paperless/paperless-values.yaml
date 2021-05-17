@@ -6,7 +6,7 @@ metadata:
 spec:
   values:
     env:
-      PAPERLESS_CONSUMPTION_DIR: /usr/src/paperless/consume/documents
+      PAPERLESS_CONSUMPTION_DIR: /usr/src/paperless/consume
     persistence:
       data:
         enabled: true
