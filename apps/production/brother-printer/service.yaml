@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: brother-printer
+  labels:
+    samsonnguyen.ca/instance: brother-printer
+spec:
+  selector:
+    app: brother-printer
+  ports:
+  - protocol: TCP
+    name: cups
+    port: 631
+    targetPort: 631
