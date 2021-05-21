@@ -15,4 +15,4 @@ resources:
   - openebs.yaml
   - kiwigrid.yaml
   - utkuozdemir.yaml
-  - vmware-tanzu
+  - vmware-tanzu.yaml
