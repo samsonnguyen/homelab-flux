@@ -13,3 +13,4 @@ resources:
   - openebs
   - node-feature-discovery
   - intel-gpu-plugin
+  - velero
