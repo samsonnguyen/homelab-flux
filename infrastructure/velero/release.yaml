@@ -13,12 +13,19 @@ spec:
         namespace: flux-system
   interval: 1h0m0s
   values:
-    backupsEnabled: false
-    snapshotsEnabled: false
     credentials:
-      useSecret: false
+      existingSecret: b2-credentials
+    configuration:
+      provider: aws
+      backupStorageLocation:
+        name: backblaze-backups
+        bucket: samsonnguyen-homelab
+        config:
+          s3Url: https://s3.us-west-001.backblazeb2.com
+          region: us-west-001
+      volumeSnapshotLocation:
+        name: backblaze-snapshots
+        config:
+          s3Url: https://s3.us-west-001.backblazeb2.com
+          region: us-west-001
     deployRestic: true
-    restic:
-      privileged: true
-    defaultVolumesToRestic: true
-    
