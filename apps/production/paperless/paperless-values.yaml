@@ -36,3 +36,5 @@ spec:
         - secretName: docs-samsonnguyen-ca-tls
           hosts:
             - docs.samsonnguyen.ca
+    podAnnotations:
+      backup.velero.io/backup-volumes: data
