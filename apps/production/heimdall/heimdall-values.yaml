@@ -25,3 +25,5 @@ spec:
         - secretName: home-samsonnguyen-ca-tls
           hosts:
             - home.samsonnguyen.ca
+    podAnnotations:
+      backup.velero.io/backup-volumes: config

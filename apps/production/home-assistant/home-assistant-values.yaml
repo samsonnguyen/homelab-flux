@@ -27,3 +27,8 @@ spec:
         bearerTokenSecret:
           name: prometheus-access-token
           key: access_token
+    podAnnotations:
+      backup.velero.io/backup-volumes: config
+    mariadb:
+      podAnnotations:
+        backup.velero.io/backup-volumes: data

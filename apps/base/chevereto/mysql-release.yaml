@@ -23,3 +23,5 @@ spec:
       existingSecret: chevereto-mariadb
       database: chevereto
       username: chevereto
+    podAnnotations:
+        backup.velero.io/backup-volumes: data
