@@ -9,6 +9,8 @@ spec:
       version: ">=14.5.0"
   values:
     grafana:
+      deploymentStrategy:
+        type: Recreate
       plugins:
         - grafana-piechart-panel
       ingress: 
