@@ -37,4 +37,18 @@ spec:
       volumeMounts:
         - mountPath: /target
           name: plugins
-    
+    schedules:
+      homelab:
+        schedule: "0 5 * * *"
+        template:
+          ttl: "240h"
+          includedNamespaces:
+          - media
+          - chevereto
+          - home-assistant
+          - heimdall
+          - huginn
+          - mqtt
+          - nextcloud
+          - node-red
+          - paperless
