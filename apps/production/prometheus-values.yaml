@@ -26,6 +26,12 @@ spec:
           enabled: true
           org_name: admin
           org_role: Admin
+      podAnnotations:
+        backup.velero.io/backup-volumes: storage
+    prometheusOperator:
+      image:
+        repository: quay.io/prometheus-operator/prometheus-operator
+        tag: v0.47.1
     prometheus:
       ingress:
         enabled: false

@@ -52,3 +52,4 @@ spec:
           - nextcloud
           - node-red
           - paperless
+          - prometheus
