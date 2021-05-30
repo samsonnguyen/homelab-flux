@@ -3,6 +3,6 @@ kind: HelmRelease
 metadata:
   name: radarr
 spec:
-  values:
-    podAnnotations:
-      backup.velero.io/backup-volumes: config
+  # values:
+    # podAnnotations:
+      # backup.velero.io/backup-volumes: config
