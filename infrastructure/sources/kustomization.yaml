@@ -16,3 +16,4 @@ resources:
   - kiwigrid.yaml
   - utkuozdemir.yaml
   - vmware-tanzu.yaml
+  - nvidia.yaml
