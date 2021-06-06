@@ -4,4 +4,3 @@ namespace: nvidia
 resources:
   - namespace.yaml
   - release.yaml
-  - storageclass.yaml
