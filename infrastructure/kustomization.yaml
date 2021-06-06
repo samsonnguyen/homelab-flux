@@ -14,3 +14,4 @@ resources:
   - node-feature-discovery
   - intel-gpu-plugin
   - velero
+  - nvidia
