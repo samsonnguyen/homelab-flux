@@ -16,10 +16,6 @@ spec:
     env:
       TZ: "America/Edmonton"
     persistence:
-      config:
-        enabled: true
-        storageClass: openebs-jiva
-        size: 15Gi
       media:
         enabled: true
         accessMode: ReadWriteOnce
