@@ -9,4 +9,4 @@ spec:
     kind: ClusterIssuer
   dnsNames:
   - samsonnguyen.ca
-  - *.samsonnguyen.ca
+  - "*.samsonnguyen.ca"
