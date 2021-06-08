@@ -9,7 +9,7 @@ resources:
   - ../../base/media
 patchesStrategicMerge:
   - plex-values.yaml
-  - radarr-values.yaml
+  # - radarr-values.yaml
   - sonarr-values.yaml
   - sabnzbd-values.yaml
   - bazarr-values.yaml
