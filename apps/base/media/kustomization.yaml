@@ -6,5 +6,6 @@ resources:
   - namespace.yaml
   - radarr
   - sonarr
+  - bazarr
   - plex
   - sabnzbd

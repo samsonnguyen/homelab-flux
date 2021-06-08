@@ -5,12 +5,14 @@ resources:
   - radarr-media-pv.yaml
   - sonarr-media-pv.yaml
   - sabnzbd-media-pv.yaml
+  - bazarr-media-pv.yaml
   - ../../base/media
 patchesStrategicMerge:
   - plex-values.yaml
   - radarr-values.yaml
   - sonarr-values.yaml
   - sabnzbd-values.yaml
+  - bazarr-values.yaml
 patches:
   - target:
       kind: IngressRoute
@@ -38,6 +40,14 @@ patches:
       - op: replace
         path: /spec/routes/0/match
         value: Host(`radarr.samsonnguyen.ca`)
+  - target:
+      kind: IngressRoute
+      name: bazarr-ingress
+      namespace: media
+    patch: |-
+      - op: replace
+        path: /spec/routes/0/match
+        value: Host(`bazarr.samsonnguyen.ca`)
   - target:
       kind: IngressRoute
       name: sabnzbd-ingress
