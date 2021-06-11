@@ -22,10 +22,10 @@ spec:
     persistence:
       configinc:
         enabled: true
-        storageClass: freenas-nfs-csi
+        storageClass: openebs-jiva
       data:
         enabled: true
-        storageClass: freenas-iscsi-csi
+        storageClass: openebs-jiva
     service:
       type: LoadBalancer
       loadBalancerIP: 10.0.11.2
