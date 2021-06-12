@@ -26,6 +26,7 @@ spec:
       data:
         enabled: true
         accessMode: ReadWriteOnce
+        size: 10Gi
         storageClass: openebs-jiva
     service:
       type: LoadBalancer
