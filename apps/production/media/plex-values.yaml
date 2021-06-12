@@ -18,8 +18,9 @@ spec:
           name: plex-claim
           key: claim
     service:
-      type: LoadBalancer
-      loadBalancerIP: 10.0.11.3
+      main:
+        type: LoadBalancer
+        loadBalancerIP: 10.0.11.3
     podSecurityContext:
       runAsUser: 1001
       runAsGroup: 1001

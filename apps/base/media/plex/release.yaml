@@ -11,7 +11,7 @@ spec:
         kind: HelmRepository
         name: k8s-at-home
         namespace: flux-system
-      version: "4.4.0"
+      version: ~5.0
   interval: 5m
   values:
     env:
@@ -36,4 +36,5 @@ spec:
         mountPath: /transcode
         size: "64Gi"
     service:
-      type: LoadBalancer
+      main:
+        type: LoadBalancer
