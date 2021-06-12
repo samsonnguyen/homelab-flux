@@ -25,6 +25,7 @@ spec:
         storageClass: openebs-jiva
       data:
         enabled: true
+        accessMode: ReadWriteOnce
         storageClass: openebs-jiva
     service:
       type: LoadBalancer
