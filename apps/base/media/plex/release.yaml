@@ -28,14 +28,14 @@ spec:
         accessMode: ReadWriteOnce
         storageClass: ""
         size: 8Ti
-      transcode:
-        enabled: true
-        accessMode: ReadWriteOnce
-        emptyDir:
-          enabled: true
-          medium: Memory
-        mountPath: /transcode
-        size: "64Gi"
+      # transcode:
+      #   enabled: true
+      #   accessMode: ReadWriteOnce
+      #   emptyDir:
+      #     enabled: true
+      #     medium: Memory
+      #   mountPath: /transcode
+      #   size: "6Gi"
     service:
       main:
         type: LoadBalancer
