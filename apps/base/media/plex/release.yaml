@@ -30,6 +30,7 @@ spec:
         size: 8Ti
       transcode:
         enabled: true
+        accessMode: ReadWriteOnce
         emptyDir:
           enabled: true
           medium: Memory
