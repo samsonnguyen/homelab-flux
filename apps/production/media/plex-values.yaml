@@ -38,13 +38,13 @@ spec:
       requests:
         # Hardware acceleration using an Intel iGPU w/ QuickSync and
         # using intel-gpu-plugin (https://github.com/intel/intel-device-plugins-for-kubernetes)
-        gpu.intel.com/i915: 1
+        nvidia.com/gpu: 1
         cpu: 400m
         memory: 1024Mi
       limits:
         # Hardware acceleration using an Intel iGPU w/ QuickSync and
         # using intel-gpu-plugin (https://github.com/intel/intel-device-plugins-for-kubernetes)
-        gpu.intel.com/i915: 1
+        nvidia.com/gpu: 1
         memory: 8192Mi
     podAnnotations:
       backup.velero.io/backup-volumes: config
