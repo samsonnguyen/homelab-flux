@@ -24,4 +24,4 @@ spec:
       database: chevereto
       username: chevereto
     podAnnotations:
-        backup.velero.io/backup-volumes: data
+      backup.velero.io/backup-volumes: data

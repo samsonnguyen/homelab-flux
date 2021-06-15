@@ -17,3 +17,4 @@ resources:
   - utkuozdemir.yaml
   - vmware-tanzu.yaml
   - nvidia.yaml
+  - kubevious.yaml

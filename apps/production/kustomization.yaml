@@ -21,6 +21,7 @@ resources:
   - huginn
   - paperless
   - brother-printer
+  - kubevious
 patchesStrategicMerge:
   - prometheus-values.yaml
   - nextcloud-values.yaml
