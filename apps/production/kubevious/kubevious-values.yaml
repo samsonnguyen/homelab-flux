@@ -23,5 +23,5 @@ spec:
     mysql:
       podAnnotations:
         backup.velero.io/backup-volumes: data
-      primary:
+      persistence:
         storageClass: openebs-jiva
