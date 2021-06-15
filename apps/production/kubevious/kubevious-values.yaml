@@ -24,4 +24,5 @@ spec:
       podAnnotations:
         backup.velero.io/backup-volumes: data
       persistence:
+        enabled: true
         storageClass: openebs-jiva
