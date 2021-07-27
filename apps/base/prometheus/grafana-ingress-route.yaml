@@ -14,9 +14,7 @@ spec:
           port: 80
           namespace: prometheus
       middlewares:
-      - name: sso
-        namespace: traefik
-      - name: redirect-scheme
-        namespace: traefik
+      - name: traefik-sso@kubernetescrd
+      - name: traefik-redirect-scheme@kubernetescrd
   tls:
     secretName: wildcard-samsonnguyen-ca
