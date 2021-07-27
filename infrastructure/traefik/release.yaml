@@ -16,7 +16,8 @@ spec:
     remediation:
       retries: 3
   values:
-    appVersion: "2.4.12"
+    image:
+      tag: v2.4.12
     logs:
       general:
         level: ERROR
