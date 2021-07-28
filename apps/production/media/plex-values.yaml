@@ -5,7 +5,7 @@ metadata:
 spec:
   values:
     image:
-      tag: v1.23.2.4656-85f0adf5b
+      tag: latest
     env:
       PUID: "1001"
       PGID: "1001"
