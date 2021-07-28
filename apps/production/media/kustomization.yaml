@@ -8,7 +8,6 @@ resources:
   - sabnzbd-media-pv.yaml
   - bazarr-media-pv.yaml
   - ../../base/media
-  - ../../base/traefik-sso/middleware.yaml
 patchesStrategicMerge:
   - plex-values.yaml
   # - radarr-values.yaml
