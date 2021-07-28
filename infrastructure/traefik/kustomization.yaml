@@ -4,3 +4,4 @@ namespace: traefik
 resources:
   - namespace.yaml
   - release.yaml
+  - tlsstore.yaml
