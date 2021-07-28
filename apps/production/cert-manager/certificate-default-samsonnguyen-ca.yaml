@@ -1,9 +1,9 @@
 apiVersion: cert-manager.io/v1alpha2
 kind: Certificate
 metadata:
-  name: wildcard-samsonnguyen-ca
+  name: default-samsonnguyen-ca
 spec:
-  secretName: wildcard-samsonnguyen-ca
+  secretName: default-samsonnguyen-ca
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer

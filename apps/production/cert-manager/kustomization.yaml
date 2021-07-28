@@ -4,4 +4,4 @@ resources:
   - letsencrypt-staging.yml
   - letsencrypt-prod.yml
   # - secret-wildcard-samsonnguyen-ca.yaml
-  - certificate-wildcard-samsonnguyen-ca.yaml
+  - certificate-default-samsonnguyen-ca.yaml

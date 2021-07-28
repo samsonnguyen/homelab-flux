@@ -14,6 +14,6 @@ spec:
       - name: traefik-sso@kubernetescrd
       - name: traefik-redirect-scheme@kubernetescrd
   tls:
-    secretName: wildcard-samsonnguyen-ca
+    secretName: default-samsonnguyen-ca
     domains:
       - main: samsonnguyen.ca

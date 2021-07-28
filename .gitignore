@@ -16,3 +16,4 @@ bin/
 freenas-iscsi.yaml
 freenas-nfs.yaml
 *.secret
+.DS_store
