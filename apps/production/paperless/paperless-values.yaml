@@ -20,21 +20,22 @@ spec:
         enabled: true
         existingClaim: paperless-consume
     ingress:
-      enabled: true
-      hosts:
-      - host: docs.samsonnguyen.ca
-        paths:
-          - path: /
-            pathType: Prefix
-      annotations:
-        kubernetes.io/ingress.class: traefik
-        cert-manager.io/cluster-issuer: letsencrypt-prod
-        traefik.ingress.kubernetes.io/router.entrypoints: websecure
-        traefik.ingress.kubernetes.io/router.tls: "true"
-        traefik.ingress.kubernetes.io/router.middlewares: traefik-sso@kubernetescrd
-      tls:
-        - secretName: docs-samsonnguyen-ca-tls
-          hosts:
-            - docs.samsonnguyen.ca
+      main:
+        enabled: true
+        hosts:
+        - host: docs.samsonnguyen.ca
+          paths:
+            - path: /
+              pathType: Prefix
+        annotations:
+          kubernetes.io/ingress.class: traefik
+          cert-manager.io/cluster-issuer: letsencrypt-prod
+          traefik.ingress.kubernetes.io/router.entrypoints: websecure
+          traefik.ingress.kubernetes.io/router.tls: "true"
+          traefik.ingress.kubernetes.io/router.middlewares: traefik-sso@kubernetescrd
+        tls:
+          - secretName: docs-samsonnguyen-ca-tls
+            hosts:
+              - docs.samsonnguyen.ca
     podAnnotations:
       backup.velero.io/backup-volumes: data
