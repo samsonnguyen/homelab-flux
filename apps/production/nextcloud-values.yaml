@@ -6,7 +6,7 @@ metadata:
 spec:
   values:
     image:
-      tag: 21-apache
+      tag: 22.1.1-apache
       pullPolicy: Always
     livenessProbe:
       enabled: false
