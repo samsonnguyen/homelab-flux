@@ -4,6 +4,10 @@ metadata:
   name: default-samsonnguyen-ca
 spec:
   secretName: default-samsonnguyen-ca
+  secretTemplate:
+    annotations:
+      replicator.v1.mittwald.de/replication-allowed: "true"
+      replicator.v1.mittwald.de/replication-allowed-namespaces: ".*"
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
