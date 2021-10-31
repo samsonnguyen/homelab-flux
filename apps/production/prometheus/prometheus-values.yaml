@@ -32,7 +32,7 @@ spec:
           config_file: /etc/grafana/ldap.toml
         smtp:
           enabled: true
-          host: smtp.zoho.com
+          host: smtp.zoho.com:587
           from_address: donotreply@samsonnguyen.ca
           from_name: Grafana
       ldap:
