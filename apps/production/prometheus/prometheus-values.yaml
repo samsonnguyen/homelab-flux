@@ -33,7 +33,7 @@ spec:
         smtp:
           enabled: true
           host: smtp.zoho.com:587
-          from_address: donotreply@samsonnguyen.ca
+          from_address: samson@samsonnguyen.ca
           from_name: Grafana
       admin:
         existingSecret: kube-prometheus-stack-grafana
