@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
   - cert-manager
   - traefik
-  - ../base/prometheus
+  - prometheus
   - ../base/nextcloud
   - ../base/loki-stack
   - mqtt
@@ -23,26 +23,8 @@ resources:
   - brother-printer
   - kubevious
 patchesStrategicMerge:
-  - prometheus-values.yaml
   - nextcloud-values.yaml
   - loki-stack-values.yaml
-patches:
-  - target:
-      kind: IngressRoute
-      name: prometheus-ingress
-      namespace: prometheus
-    patch: |-
-      - op: replace
-        path: /spec/routes/0/match
-        value: Host(`metrics.samsonnguyen.ca`)
-  - target:
-      kind: IngressRoute
-      name: grafana-ingress
-      namespace: prometheus
-    patch: |-
-      - op: replace
-        path: /spec/routes/0/match
-        value: Host(`grafana.samsonnguyen.ca`)
   - target:
       kind: IngressRoute
       name: nextcloud-ingress

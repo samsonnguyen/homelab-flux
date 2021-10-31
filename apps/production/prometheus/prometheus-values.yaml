@@ -26,6 +26,22 @@ spec:
           enabled: true
           org_name: admin
           org_role: Admin
+        auth.ldap:
+          enabled: true
+          allow_sign_up: true
+          config_file: /etc/grafana/ldap.toml
+        smtp:
+          enabled: true
+          host: smtp.zoho.com
+          from_address: donotreply@samsonnguyen.ca
+          from_name: Grafana
+      ldap:
+        enabled: true
+        existingSecret: kube-prometheus-stack-grafana
+      smtp:
+        existingSecret: kube-prometheus-stack-grafana-smtp
+        userKey: username
+        passwordKey: password
       podAnnotations:
         backup.velero.io/backup-volumes: storage
     prometheusOperator:
