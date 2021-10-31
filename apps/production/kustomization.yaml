@@ -25,6 +25,7 @@ resources:
 patchesStrategicMerge:
   - nextcloud-values.yaml
   - loki-stack-values.yaml
+patches:
   - target:
       kind: IngressRoute
       name: nextcloud-ingress
