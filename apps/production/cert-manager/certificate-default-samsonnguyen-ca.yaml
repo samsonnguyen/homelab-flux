@@ -7,7 +7,7 @@ spec:
   secretTemplate:
     annotations:
       replicator.v1.mittwald.de/replicate-to-matching: >
-        replicator.v1.mittwald.de/secret=default/default-samsonnguyen-ca
+        replicator.v1.mittwald.de/secret=default-samsonnguyen-ca
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer

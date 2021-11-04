@@ -3,4 +3,4 @@ kind: Namespace
 metadata:
   name: zwave
   labels:
-    replicator.v1.mittwald.de/secret: default/default-samsonnguyen-ca
+    replicator.v1.mittwald.de/secret: default-samsonnguyen-ca
