@@ -6,8 +6,8 @@ spec:
   secretName: default-samsonnguyen-ca
   secretTemplate:
     annotations:
-      replicator.v1.mittwald.de/replication-allowed: "true"
-      replicator.v1.mittwald.de/replication-allowed-namespaces: ".*"
+      replicator.v1.mittwald.de/replicate-to-matching: >
+        replicator.v1.mittwald.de/secret=default/default-samsonnguyen-ca
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer

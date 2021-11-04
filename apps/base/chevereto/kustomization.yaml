@@ -8,7 +8,6 @@ resources:
   - chevereto-deployment.yaml
   - chevereto-pvc.yaml
   - chevereto-service.yaml
-  - ../wildcard-cert
   - ../ingress
 patches:
   - target:

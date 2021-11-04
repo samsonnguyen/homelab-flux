@@ -4,4 +4,3 @@ namespace: kubevious
 resources:
   - namespace.yaml
   - release.yaml
-  - ../wildcard-cert
