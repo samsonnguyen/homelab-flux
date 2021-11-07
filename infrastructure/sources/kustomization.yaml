@@ -18,3 +18,4 @@ resources:
   - vmware-tanzu.yaml
   - nvidia.yaml
   - kubevious.yaml
+  - invoiceninja.yaml

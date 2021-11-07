@@ -1,0 +1,38 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: invoiceninja
+  namespace: invoiceninja
+spec:
+  values:
+    podAnnotations:
+      backup.velero.io/backup-volumes: storage,public
+    nginx:
+      enabled: false
+    persistence:
+      public:
+        storageClass: openebs-jiva
+      storage:
+        storageClass: openebs-jiva
+    ingress:
+      enabled: true
+      hosts:
+      - host: invoices.samsonnguyen.ca
+        paths:
+          - /
+      annotations:
+        kubernetes.io/ingress.class: traefik
+        traefik.ingress.kubernetes.io/router.entrypoints: websecure
+        traefik.ingress.kubernetes.io/router.tls: "true"
+        cert-manager.io/cluster-issuer: letsencrypt-prod
+      tls: true
+    mysql:
+      podAnnotations:
+        backup.velero.io/backup-volumes: data
+      persistence:
+        enabled: true
+        storageClass: openebs-jiva
+    redis:
+      global:
+        size: 2Gi
+        storageClass: openebs-jiva

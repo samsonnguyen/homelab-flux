@@ -22,6 +22,7 @@ resources:
   - paperless
   - brother-printer
   - kubevious
+  - invoiceninja
 patchesStrategicMerge:
   - nextcloud-values.yaml
   - loki-stack-values.yaml
