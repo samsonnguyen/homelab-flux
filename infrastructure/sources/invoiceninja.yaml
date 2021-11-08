@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: HelmRepository
 metadata:
-  name: jetstack
+  name: invoiceninja
 spec:
   interval: 30m
   url: https://invoiceninja.github.io/dockerfiles
