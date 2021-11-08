@@ -27,12 +27,10 @@ spec:
         cert-manager.io/cluster-issuer: letsencrypt-prod
       tls: true
     mysql:
+      global:
+        storageClass: openebs-jiva
       podAnnotations:
         backup.velero.io/backup-volumes: data
-      persistence:
-        enabled: true
-        storageClass: openebs-jiva
     redis:
       global:
-        size: 2Gi
         storageClass: openebs-jiva
