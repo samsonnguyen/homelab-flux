@@ -17,6 +17,8 @@ spec:
   values:
     existingSecret: invoiceninja
     redis:
-      existingSecret: invoiceninja-redis
+      auth:
+        existingSecret: invoiceninja-redis
     mariadb:
-      existingSecret: invoiceninja-mariadb
+      auth:
+        existingSecret: invoiceninja-mariadb
