@@ -10,7 +10,8 @@ spec:
       hosts:
       - host: huginn.samsonnguyen.ca
         paths:
-          - /
+          - path: /
+            pathType: Prefix
       annotations:
         kubernetes.io/ingress.class: traefik
         cert-manager.io/cluster-issuer: letsencrypt-prod
