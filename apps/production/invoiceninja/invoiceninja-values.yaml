@@ -21,10 +21,7 @@ spec:
         storageClass: openebs-jiva
     ingress:
       enabled: true
-      hosts:
-      - host: invoices.samsonnguyen.ca
-        paths:
-          - /
+      hostname: invoices.samsonnguyen.ca
       annotations:
         kubernetes.io/ingress.class: traefik
         traefik.ingress.kubernetes.io/router.entrypoints: websecure
