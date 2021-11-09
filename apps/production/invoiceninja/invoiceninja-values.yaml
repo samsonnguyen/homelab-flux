@@ -13,6 +13,7 @@ spec:
       public:
         storageClass: openebs-jiva
       storage:
+        enabled: true
         storageClass: openebs-jiva
     ingress:
       enabled: true
@@ -34,3 +35,6 @@ spec:
     redis:
       global:
         storageClass: openebs-jiva
+      replica:
+        replicaCount: 1
+
