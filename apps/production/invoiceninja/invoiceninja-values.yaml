@@ -26,12 +26,9 @@ spec:
         traefik.ingress.kubernetes.io/router.tls: "true"
         cert-manager.io/cluster-issuer: letsencrypt-prod
       tls: true
-    mysql:
+    mariadb:
       global:
         storageClass: openebs-jiva
-      primary:
-        persistence:
-          storageClass: openebs-jiva
       podAnnotations:
         backup.velero.io/backup-volumes: data
     redis:
