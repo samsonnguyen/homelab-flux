@@ -16,4 +16,4 @@ spec:
     redis:
       enabled: true
     env:
-      PAPERLESS_REDIS: "redis://localhost:6379"
+      PAPERLESS_REDIS: "redis://paperless-redis-headless:6379"
