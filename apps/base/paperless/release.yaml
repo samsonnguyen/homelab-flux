@@ -15,5 +15,7 @@ spec:
   values:
     redis:
       enabled: true
+      global:
+        storageClass: local-hostpath
     env:
       PAPERLESS_REDIS: "redis://paperless-redis-headless:6379"
