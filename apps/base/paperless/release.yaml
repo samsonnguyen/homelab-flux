@@ -12,3 +12,8 @@ spec:
         name: k8s-at-home
         namespace: flux-system
   interval: 5m
+  values:
+    redis:
+      enabled: true
+    env:
+      PAPERLESS_REDIS: "redis://localhost:6379"
