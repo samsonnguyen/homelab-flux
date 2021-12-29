@@ -25,6 +25,11 @@ spec:
             secretKeyRef:
               name: traefik-sso
               key: clientid
+        - name: WHITELIST
+          valueFrom:
+            secretKeyRef:
+              name: traefik-sso
+              key: whitelist
         - name: PROVIDERS_GOOGLE_CLIENT_SECRET
           valueFrom:
             secretKeyRef:

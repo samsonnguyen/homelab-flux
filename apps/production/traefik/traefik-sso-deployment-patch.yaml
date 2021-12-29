@@ -11,7 +11,5 @@ spec:
         env:
         - name: AUTH_HOST
           value: auth.samsonnguyen.ca
-        - name: WHITELIST
-          value: samosnn1@gmail.com,samson@samsonnguyen.ca,natalieliang869@gmail.com,jdoulla@gmail.com
         - name: COOKIE_DOMAIN
           value: samsonnguyen.ca
