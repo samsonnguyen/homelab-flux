@@ -29,7 +29,7 @@ spec:
           value: chv_
         - name: CHEVERETO_DB_USERNAME
           value: chevereto
-        image: samsonnguyen/chevereto-docker:1.6.1
+        image: nmtan/chevereto:latest
         imagePullPolicy: Always
         name: chevereto
         resources:
