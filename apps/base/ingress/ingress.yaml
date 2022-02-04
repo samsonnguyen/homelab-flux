@@ -15,7 +15,6 @@ spec:
       middlewares:
       - name: traefik-sso@kubernetescrd
       - name: traefik-redirect-scheme@kubernetescrd
-  allowCrossNamespace: true
   tls:
     secretName: default-samsonnguyen-ca
     domains:

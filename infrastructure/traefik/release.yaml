@@ -27,6 +27,7 @@ spec:
         expose: true
     additionalArguments:
       - --metrics.prometheus=true
+      - --providers.kubernetescrd.allowCrossNamespace=true
     service:
       spec:
         externalTrafficPolicy: Local
