@@ -28,6 +28,15 @@ spec:
       consume:
         enabled: true
         existingClaim: paperless-consume
+    probes:
+      liveness:
+        enabled: true
+        custom: true
+        spec:
+          initialDelaySeconds: 0
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
     ingress:
       main:
         enabled: true
