@@ -4,7 +4,7 @@ kind: IngressRoute
 metadata:
   name: ingress
   labels:
-    revision: 1
+    revision: "1"
 spec:
   entryPoints:
     - websecure
