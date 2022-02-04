@@ -1,3 +1,6 @@
 - op: replace
   path: /spec/routes/0/match
   value: Host(`nodered.samsonnguyen.ca`)
+- op: add
+  path: /spec/routes/0/middlewares/-
+  value: {"name": "traefik-basic-auth@kubernetescrd" }
