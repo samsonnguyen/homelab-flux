@@ -89,7 +89,7 @@ spec:
         - name: traefik
           endpoints:
           - path: metrics
-            port: traefik
+            port: 9100
           namespaceSelector:
             matchNames:
             - traefik
