@@ -16,6 +16,8 @@ spec:
     spec:
       containers:
       - env:
+        - name: CHEVERETO_DEBUG_LEVEL
+          value: '3'
         - name: CHEVERETO_DB_HOST
           value: mariadb
         - name: CHEVERETO_DB_NAME
