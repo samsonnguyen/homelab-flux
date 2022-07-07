@@ -27,7 +27,7 @@ spec:
             secretKeyRef:
               name: chevereto-mariadb
               key: mariadb-password
-        - name: CHEVERETO_DB_PREFIX
+        - name: CHEVERETO_DB_TABLE_PREFIX
           value: chv_
         - name: CHEVERETO_DB_USER
           value: chevereto
