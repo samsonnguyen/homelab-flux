@@ -2,6 +2,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: default-samsonnguyen-ca
+  namespace: default
 spec:
   secretName: default-samsonnguyen-ca
   secretTemplate:
