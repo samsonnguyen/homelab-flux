@@ -4,6 +4,8 @@ metadata:
   name: plex
 spec:
   values:
+    image:
+      tag: latest
     env:
       PUID: "1001"
       PGID: "1001"

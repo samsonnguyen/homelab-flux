@@ -26,11 +26,10 @@ spec:
         size: 15Gi
       shared:
         enabled: true
-        accessMode: ReadWriteOnce
+        accessMode: ReadWriteMany
         type: pvc
         storageClass: ""
         size: 8Ti
-        existingClaim: plex-media
       # transcode:
       #   enabled: true
       #   accessMode: ReadWriteOnce

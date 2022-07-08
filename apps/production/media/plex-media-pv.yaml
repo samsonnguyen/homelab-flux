@@ -1,32 +1,13 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: plex-media
+  name: plex-shared
 spec:
   accessModes:
-  - ReadWriteOnce
+  - ReadWriteMany
   capacity:
     storage: 8Ti
-  claimRef:
-    apiVersion: v1
-    kind: PersistentVolumeClaim
-    name: plex-media
-    namespace: media
   nfs:
     path: /mnt/storage_1/movies
     server: freenas-int.samsonnguyen.ca
   volumeMode: Filesystem
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: plex-media
-  namespace: media
-spec:
-  accessModes:
-  - ReadWriteOnce
-  resources:
-    requests:
-      storage: 8Ti
-  volumeMode: Filesystem
-  volumeName: plex-media
