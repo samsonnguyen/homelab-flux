@@ -23,4 +23,6 @@ spec:
       enabled: true
       basePath: /data
     cstor:
-       enabled: true
+      enabled: true
+    localpv-provisioner:
+      enabled: false
