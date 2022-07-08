@@ -11,7 +11,7 @@ spec:
         kind: HelmRepository
         name: k8s-at-home
         namespace: flux-system
-      version: ~6.2
+      version: ~6.3
   interval: 5m
   values:
     env:
@@ -23,7 +23,7 @@ spec:
         enabled: true
         storageClass: openebs-hostpath
         size: 15Gi
-      media:
+      shared:
         enabled: true
         accessMode: ReadWriteOnce
         storageClass: ""
