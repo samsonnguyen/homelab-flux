@@ -22,10 +22,12 @@ spec:
       config:
         enabled: true
         storageClass: openebs-hostpath
+        type: pvc
         size: 15Gi
       shared:
         enabled: true
         accessMode: ReadWriteOnce
+        type: pvc
         storageClass: ""
         size: 8Ti
       # transcode:
