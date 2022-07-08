@@ -21,7 +21,8 @@ spec:
     persistence:
       config:
         enabled: true
-        storageClass: openebs-hostpath
+        accessMode: ReadWriteMany
+        storageClass: openebs-jiva
         type: pvc
         size: 15Gi
       shared:

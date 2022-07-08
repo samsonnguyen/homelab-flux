@@ -1,19 +1,13 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  finalizers:
-  - kubernetes.io/pv-protection
-  name: sonarr-media
+  name: sonarr-shared
 spec:
   accessModes:
-  - ReadWriteOnce
+  - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
   capacity:
     storage: 8Ti
-  claimRef:
-    apiVersion: v1
-    kind: PersistentVolumeClaim
-    name: sonarr-media
-    namespace: media
   nfs:
     path: /mnt/storage_1/movies
     server: freenas-int.samsonnguyen.ca

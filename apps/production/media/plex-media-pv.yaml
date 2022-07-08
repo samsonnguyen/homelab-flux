@@ -5,6 +5,7 @@ metadata:
 spec:
   accessModes:
   - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
   capacity:
     storage: 8Ti
   nfs:
