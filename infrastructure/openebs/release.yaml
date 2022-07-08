@@ -18,3 +18,7 @@ spec:
       replicas: 2
     crd:
       enableInstall: true
+    localprovisioner:
+      basePath: /data
+      hostpathClass:
+        isDefaultClass: true
