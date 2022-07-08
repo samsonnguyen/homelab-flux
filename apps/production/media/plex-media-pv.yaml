@@ -16,3 +16,17 @@ spec:
     path: /mnt/storage_1/movies
     server: freenas-int.samsonnguyen.ca
   volumeMode: Filesystem
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: plex-media
+  namespace: media
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 8Ti
+  volumeMode: Filesystem
+  volumeName: plex-media

@@ -30,6 +30,7 @@ spec:
         type: pvc
         storageClass: ""
         size: 8Ti
+        existingClaim: plex-media
       # transcode:
       #   enabled: true
       #   accessMode: ReadWriteOnce
