@@ -17,9 +17,13 @@ spec:
     jiva:
       enabled: true
       replicas: 2
+      openebsLocalpv:
+        enabled: true
+      localpv-provisioner:
+        openebsNDM:
+          enabled: true
     crd:
       enableInstall: true
     localprovisioner:
+      enabled: true
       basePath: /data
-      hostpathClass:
-        isDefaultClass: false
