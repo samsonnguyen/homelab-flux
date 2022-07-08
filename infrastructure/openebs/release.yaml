@@ -22,3 +22,5 @@ spec:
     localprovisioner:
       enabled: true
       basePath: /data
+    cstor:
+       enabled: true
