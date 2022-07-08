@@ -21,7 +21,7 @@ spec:
     persistence:
       config:
         enabled: true
-        storageClass: local-hostpath
+        storageClass: openebs-hostpath
         size: 15Gi
       media:
         enabled: true
