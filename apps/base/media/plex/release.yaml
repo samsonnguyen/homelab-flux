@@ -22,7 +22,7 @@ spec:
       config:
         enabled: true
         accessMode: ReadWriteMany
-        storageClass: openebs-jiva
+        storageClass: openebs-jiva-default
         type: pvc
         size: 15Gi
       shared:
