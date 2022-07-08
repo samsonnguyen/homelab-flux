@@ -2,6 +2,8 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: sonarr-shared
+  labels:
+    app: sonarr
 spec:
   accessModes:
   - ReadWriteMany

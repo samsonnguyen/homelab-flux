@@ -28,3 +28,6 @@ spec:
         type: pvc
         storageClass: ""
         size: 8Ti
+        selector:
+          matchLabels:
+            app: sonarr

@@ -18,10 +18,16 @@ spec:
     persistence:
       config:
         enabled: true
-        storageClass: local-hostpath
+        storageClass: openebs-jiva
+        accessMode: ReadWriteMany
+        type: pvc
         size: 15Gi
-      media:
+      shared:
         enabled: true
-        accessMode: ReadWriteOnce
+        accessMode: ReadWriteMany
+        type: pvc
         storageClass: ""
         size: 8Ti
+        selector:
+          matchLabels:
+            app: sabnzbd
