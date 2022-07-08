@@ -21,4 +21,4 @@ spec:
     localprovisioner:
       basePath: /data
       hostpathClass:
-        isDefaultClass: true
+        isDefaultClass: false
