@@ -21,7 +21,7 @@ spec:
         enabled: true
       localpv-provisioner:
         openebsNDM:
-          enabled: true
+          enabled: false
     crd:
       enableInstall: true
     localprovisioner:
