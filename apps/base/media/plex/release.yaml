@@ -24,7 +24,7 @@ spec:
         storageClass: openebs-hostpath
         type: pvc
         size: 15Gi
-      shared:
+      media:
         enabled: true
         accessMode: ReadWriteOnce
         type: pvc
