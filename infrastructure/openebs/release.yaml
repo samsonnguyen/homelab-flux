@@ -17,11 +17,6 @@ spec:
     jiva:
       enabled: true
       replicas: 2
-      openebsLocalpv:
-        enabled: true
-      localpv-provisioner:
-        openebsNDM:
-          enabled: false
     crd:
       enableInstall: true
     localprovisioner:
