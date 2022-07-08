@@ -15,6 +15,7 @@ spec:
   interval: 1h0m0s
   values:
     jiva:
+      enabled: true
       replicas: 2
     crd:
       enableInstall: true
