@@ -7,4 +7,4 @@ spec:
     podAnnotations:
       backup.velero.io/backup-volumes: config
     env:
-      HOST_WHITELIST_ENTRIES: sanbzbd.samsonnguyen.ca
+      HOST_WHITELIST_ENTRIES: sabnzbd.samsonnguyen.ca
