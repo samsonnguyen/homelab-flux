@@ -25,11 +25,17 @@ spec:
     persistence:
       config:
         enabled: true
+        accessMode: ReadWriteMany
+        type: pvc
+        storageClass: ""
+        size: 10Gi
+        selector:
+          matchLabels:
+            app: homeassistant
         # emptyDir:
         #   enabled: false
         # storageClass: "-"
         # size: 15Gi
-        existingClaim: "home-assistant-config"
     mariadb:
       enabled: true
       primary:

@@ -1,19 +1,15 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  finalizers:
-  - kubernetes.io/pv-protection
   name: home-assistant-config
+  labels:
+    app: homeassistant
 spec:
   accessModes:
-  - ReadWriteOnce
+  - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
   capacity:
     storage:  10Gi
-  claimRef:
-    apiVersion: v1
-    kind: PersistentVolumeClaim
-    name: home-assistant-config
-    namespace: home-assistant
   nfs:
     path: /mnt/storage_1/k8s/manual/home-assistant/home-assistant-config
     server: freenas-int.samsonnguyen.ca
