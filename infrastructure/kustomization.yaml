@@ -4,7 +4,6 @@ resources:
   - sources
   - sealed-secrets
   - kubernetes-replicator
-  - redis
   # - democratic-csi
   - metallb
   - traefik
