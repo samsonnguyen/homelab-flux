@@ -10,9 +10,6 @@ spec:
   - ReadWriteOnce
   capacity:
     storage: 100Gi
-  claimRef:
-    name: chevereto
-    namespace: chevereto
   nfs:
     path: /mnt/storage_1/k8s/chevereto
     server: freenas-int.samsonnguyen.ca
