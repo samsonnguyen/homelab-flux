@@ -16,8 +16,12 @@ spec:
     env:
       TZ: "America/Edmonton"
     persistence:
-      media:
+      shared:
         enabled: true
-        accessMode: ReadWriteOnce
+        accessMode: ReadWriteMany
+        type: pvc
         storageClass: ""
         size: 8Ti
+        selector:
+          matchLabels:
+            app: bazarr
