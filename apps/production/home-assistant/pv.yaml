@@ -9,7 +9,7 @@ spec:
   - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   capacity:
-    storage:  10Gi
+    storage: 10Gi
   nfs:
     path: /mnt/storage_1/k8s/manual/home-assistant/home-assistant-config
     server: freenas-int.samsonnguyen.ca

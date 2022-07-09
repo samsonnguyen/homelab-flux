@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: node-red
-      version: ~10.0
+      version: ~10.1
       sourceRef:
         kind: HelmRepository
         name: k8s-at-home
@@ -28,11 +28,13 @@ spec:
     persistence:
       data:
         enabled: true
-        # emptyDir:
-        #   enabled: false
-        # storageClass: "-"
-        # size: 15Gi
-        existingClaim: "node-red-config"
+        accessMode: ReadWriteMany
+        type: pvc
+        storageClass: ""
+        size: 10Gi
+        selector:
+          matchLabels:
+            app: nodered
     mariadb:
       enabled: true
       primary:

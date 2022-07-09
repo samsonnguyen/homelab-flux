@@ -1,19 +1,14 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  finalizers:
-  - kubernetes.io/pv-protection
   name: node-red-config
+  labels:
+    app: nodered
 spec:
   accessModes:
-  - ReadWriteOnce
+  - ReadWriteMany
   capacity:
     storage:  10Gi
-  claimRef:
-    apiVersion: v1
-    kind: PersistentVolumeClaim
-    name: node-red-config
-    namespace: node-red
   nfs:
     path: /mnt/storage_1/k8s/manual/node-red/node-red-config
     server: freenas-int.samsonnguyen.ca
