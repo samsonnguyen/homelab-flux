@@ -21,7 +21,6 @@ resources:
   - huginn
   - paperless
   - brother-printer
-  - kubevious
   - invoiceninja
 patchesStrategicMerge:
   - nextcloud-values.yaml
@@ -35,4 +34,3 @@ patches:
       - op: replace
         path: /spec/routes/0/match
         value: Host(`cloud.samsonnguyen.ca`)
-

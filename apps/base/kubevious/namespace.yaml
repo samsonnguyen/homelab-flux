@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: kubevious
-  labels:
-    rreplicator.v1.mittwald.de/secret: default-samsonnguyen-ca
