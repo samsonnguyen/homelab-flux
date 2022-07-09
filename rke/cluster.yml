@@ -1,0 +1,35 @@
+cluster_name: homelab_k8s
+ssh_key_path: ~/.ssh/id_rsa
+ssh_agent_auth: true
+nodes:
+  - address: 10.0.10.59
+    user: root
+    role:
+      - controlplane
+      - etcd
+    hostname_override: kube-master1
+  - address: 10.0.10.60
+    user: root
+    role:
+      - worker
+    hostname_override: kube-worker1
+  - address: 10.0.10.12
+    user: root
+    role:
+      - worker
+    hostname_override: kube-worker2
+
+network:
+  plugin: canal
+ingress:
+  provider: none
+services:
+  kubelet: 
+    extra_binds:
+    - "/data:/data"
+    - "/etc/iscsi:/etc/iscsi"
+    - "/sbin/iscsiadm:/sbin/iscsiadm"
+    - "/var/lib/iscsi:/var/lib/iscsi"
+    - "/lib/modules"
+    - "/var/openebs:/var/openebs"
+    - "/dev/dri:/dev/dri"
