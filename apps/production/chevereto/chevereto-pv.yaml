@@ -13,4 +13,4 @@ spec:
   nfs:
     path: /mnt/storage_1/k8s/chevereto
     server: freenas-int.samsonnguyen.ca
-  storageClassName: manual
+  storageClassName: ""
