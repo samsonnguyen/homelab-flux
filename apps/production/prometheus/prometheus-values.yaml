@@ -6,7 +6,7 @@ metadata:
 spec:
   chart:
     spec:
-      version: "~30.0"
+      version: "~36.6"
   values:
     grafana:
       deploymentStrategy:
