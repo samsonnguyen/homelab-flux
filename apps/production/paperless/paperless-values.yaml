@@ -22,10 +22,22 @@ spec:
         size: 5Gi
       media:
         enabled: true
-        existingClaim: paperless-media
+        accessMode: ReadWriteMany
+        type: pvc
+        storageClass: ""
+        size: 100Gi
+        selector:
+          matchLabels:
+            app: paperless
       consume:
         enabled: true
-        existingClaim: paperless-consume
+        accessMode: ReadWriteMany
+        type: pvc
+        storageClass: ""
+        size: 10Gi
+        selector:
+          matchLabels:
+            app: paperless
     ingress:
       main:
         enabled: true

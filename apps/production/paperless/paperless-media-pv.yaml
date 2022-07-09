@@ -1,19 +1,15 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  finalizers:
-  - kubernetes.io/pv-protection
   name: paperless-media
+  labels:
+    app: paperless
 spec:
   accessModes:
-  - ReadWriteOnce
+  - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
   capacity:
     storage: 100Gi
-  claimRef:
-    apiVersion: v1
-    kind: PersistentVolumeClaim
-    name: paperless-media
-    namespace: paperless
   nfs:
     path: /mnt/storage_1/k8s/manual/paperless/paperless-media
     server: freenas-int.samsonnguyen.ca
