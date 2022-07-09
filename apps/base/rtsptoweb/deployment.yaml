@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rtsptoweb
+  namespace: rtsptoweb
+spec:
+  selector:
+    matchLabels:
+      app: rtsptoweb
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: rtsptoweb
+    spec:
+      containers:
+      - image: ghcr.io/deepch/rtsptoweb:latest
+        volumeMounts:
+        - mountPath: /config/config.json
+          name: rtsptoweb
+          readOnly: true
+        name: rtsptoweb
+        resources:
+         requests:
+           cpu: 1
+           memory: 100Mi
+         limits:
+           cpu: 2
+           memory: 2.5Gi
+      volumes:
+      - name: rtsptoweb
+        secret:
+          secretName: rtsptoweb
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30

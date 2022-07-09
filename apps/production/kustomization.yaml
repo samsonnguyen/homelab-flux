@@ -8,6 +8,7 @@ resources:
   - ../base/loki-stack
   - mqtt
   - ../base/cloudflare-ddns
+  - ../base/rtsptoweb
   - home-assistant
   - node-red
   - media
