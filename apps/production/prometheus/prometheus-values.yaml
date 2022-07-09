@@ -6,14 +6,14 @@ metadata:
 spec:
   chart:
     spec:
-      version: "~21.0"
+      version: "~30.0"
   values:
     grafana:
       deploymentStrategy:
         type: Recreate
       plugins:
         - grafana-piechart-panel
-      ingress: 
+      ingress:
         enabled: false
       persistence:
         enabled: true
