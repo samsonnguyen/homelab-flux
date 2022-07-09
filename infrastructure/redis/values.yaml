@@ -6,3 +6,5 @@ cluster:
 master:
   persistence:
     enabled: false
+replicas:
+  replicaCount: 1
