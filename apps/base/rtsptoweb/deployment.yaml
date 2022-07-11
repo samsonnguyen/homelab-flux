@@ -17,7 +17,7 @@ spec:
       containers:
       - image: ghcr.io/deepch/rtsptoweb:latest
         volumeMounts:
-        - mountPath: /config/config.json
+        - mountPath: /config
           name: rtsptoweb
           readOnly: true
         name: rtsptoweb
