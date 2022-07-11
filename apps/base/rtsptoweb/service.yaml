@@ -3,8 +3,6 @@ kind: Service
 metadata:
   name: rtsptoweb
   namespace: rtsptoweb
-  annotations:
-    metallb.universe.tf/address-pool: default
 spec:
   loadBalancerIP: 10.0.11.5
   ports:
@@ -15,7 +13,6 @@ spec:
     port: 5541
     targetPort: 5541
   selector:
-    app.kubernetes.io/instance: traefik
-    app.kubernetes.io/name: traefik
+    app: rtsptoweb
   sessionAffinity: None
   type: LoadBalancer
