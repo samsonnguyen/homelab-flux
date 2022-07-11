@@ -8,9 +8,11 @@ metadata:
 spec:
   loadBalancerIP: 10.0.11.5
   ports:
-  - port: 80
+  - name: http
+    port: 80
     targetPort: 80
-  - port: 5541
+  - name: rtsp
+    port: 5541
     targetPort: 5541
   selector:
     app.kubernetes.io/instance: traefik
