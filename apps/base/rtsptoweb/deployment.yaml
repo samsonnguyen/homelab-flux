@@ -28,6 +28,15 @@ spec:
          limits:
            cpu: 2
            memory: 2.5Gi
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: In
+                values:
+                - kube-worker2
       hostNetwork: true
       volumes:
       - name: rtsptoweb
