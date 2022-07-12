@@ -3,6 +3,8 @@ kind: Service
 metadata:
   name: rtsptoweb
   namespace: rtsptoweb
+  annotations:
+    metallb.universe.tf/allow-shared-ip: "true"
 spec:
   loadBalancerIP: 10.0.11.5
   ports:
@@ -12,34 +14,6 @@ spec:
   - name: rtsp
     port: 5541
     targetPort: 5541
-  - name: rtc1
-    port: 200052
-    targetPort: 200052
-    protocol: UDP
-  - name: rtc2
-    port: 200053
-    targetPort: 200053
-    protocol: UDP
-  - name: rtc3
-    port: 200054
-    targetPort: 200054
-    protocol: UDP
-  - name: rtc4
-    port: 200055
-    targetPort: 200055
-    protocol: UDP
-  - name: rtc5
-    port: 200056
-    targetPort: 200056
-    protocol: UDP
-  - name: rtc6
-    port: 200057
-    targetPort: 200057
-    protocol: UDP
-  - name: rtc8
-    port: 200058
-    targetPort: 200058
-    protocol: UDP
   selector:
     app: rtsptoweb
   sessionAffinity: None
