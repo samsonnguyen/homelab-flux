@@ -19,7 +19,7 @@ spec:
         volumeMounts:
         - mountPath: /config
           name: rtsptoweb
-          readOnly: true
+          readOnly: false
         name: rtsptoweb
         resources:
          requests:
