@@ -9,32 +9,32 @@ spec:
   loadBalancerIP: 10.0.11.5
   ports:
   - name: rtc1
-    port: 200052
-    targetPort: 200052
+    port: 20052
+    targetPort: 20052
     protocol: UDP
   - name: rtc2
-    port: 200053
-    targetPort: 200053
+    port: 20053
+    targetPort: 20053
     protocol: UDP
   - name: rtc3
-    port: 200054
-    targetPort: 200054
+    port: 20054
+    targetPort: 20054
     protocol: UDP
   - name: rtc4
-    port: 200055
-    targetPort: 200055
+    port: 20055
+    targetPort: 20055
     protocol: UDP
   - name: rtc5
-    port: 200056
-    targetPort: 200056
+    port: 20056
+    targetPort: 20056
     protocol: UDP
   - name: rtc6
-    port: 200057
-    targetPort: 200057
+    port: 20057
+    targetPort: 20057
     protocol: UDP
   - name: rtc8
-    port: 200058
-    targetPort: 200058
+    port: 20058
+    targetPort: 20058
     protocol: UDP
   selector:
     app: rtsptoweb
