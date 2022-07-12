@@ -28,6 +28,7 @@ spec:
          limits:
            cpu: 2
            memory: 2.5Gi
+      hostNetwork: true
       volumes:
       - name: rtsptoweb
         secret:
