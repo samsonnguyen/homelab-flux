@@ -12,6 +12,34 @@ spec:
   - name: rtsp
     port: 5541
     targetPort: 5541
+  - name: rtc1
+    port: 200052
+    targetPort: 200052
+    protocol: udp
+  - name: rtc2
+    port: 200053
+    targetPort: 200053
+    protocol: udp
+  - name: rtc3
+    port: 200054
+    targetPort: 200054
+    protocol: udp
+  - name: rtc4
+    port: 200055
+    targetPort: 200055
+    protocol: udp
+  - name: rtc5
+    port: 200056
+    targetPort: 200056
+    protocol: udp
+  - name: rtc6
+    port: 200057
+    targetPort: 200057
+    protocol: udp
+  - name: rtc8
+    port: 200058
+    targetPort: 200058
+    protocol: udp
   selector:
     app: rtsptoweb
   sessionAffinity: None
