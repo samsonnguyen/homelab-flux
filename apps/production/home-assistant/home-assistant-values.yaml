@@ -4,9 +4,9 @@ metadata:
   name: home-assistant
   namespace: home-assistant
 spec:
-  image:
-    tag: "2022.7.4"
   values:
+    image:
+      tag: "2022.7.4"
     affinity:
       nodeAffinity:
         preferredDuringSchedulingIgnoredDuringExecution:
