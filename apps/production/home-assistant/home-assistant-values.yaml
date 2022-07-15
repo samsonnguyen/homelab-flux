@@ -5,6 +5,16 @@ metadata:
   namespace: home-assistant
 spec:
   values:
+    affinity:
+      nodeAffinity:
+        preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 1
+          preference:
+            matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+              - kube-worker2
     ingress:
       main:
         enabled: true
