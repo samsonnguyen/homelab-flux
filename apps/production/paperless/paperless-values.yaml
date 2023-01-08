@@ -9,6 +9,7 @@ spec:
       PAPERLESS_CONSUMPTION_DIR: /usr/src/paperless/consume
       PAPERLESS_REDIS: "redis://paperless-redis-master:6379"
       PAPERLESS_CONSUMER_POLLING: 10
+      PAPERLESS_BIND_ADDR: "0.0.0.0"
     redis:
       enabled: true
       global:

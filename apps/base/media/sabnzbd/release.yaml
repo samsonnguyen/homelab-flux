@@ -13,8 +13,10 @@ spec:
         namespace: flux-system
   interval: 5m
   values:
+    image: linuxserver/sabnzbd
     env:
       TZ: "America/Edmonton"
+      HAS_IPV6: false
     persistence:
       config:
         enabled: true
