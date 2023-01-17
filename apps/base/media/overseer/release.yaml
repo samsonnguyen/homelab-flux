@@ -1,0 +1,63 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: overseerr
+spec:
+  releaseName:
+  chart:
+    spec:
+      chart: overseerr
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home
+        namespace: flux-system
+  interval: 5m
+  values:
+    image:
+      # -- image repository
+      repository: linuxserver/overseerr
+      # -- image pull policy
+      pullPolicy: Always
+      # -- image tag
+      # this example is not automatically updated, so be sure to use the latest image
+      tag: latest
+
+    strategy:
+      type: Recreate
+
+    # -- environment variables.
+    # See [image docs](https://github.com/dani-garcia/vaultwarden/blob/main/.env.template) for more details.
+    env:
+      # -- Config dir
+      PUID: 1000
+      PGID: 1000
+      TZ: "America/Edmonton"
+
+    # -- Configures service settings for the chart.
+    service:
+      main:
+        ports:
+          http:
+            port: 5055
+
+    ingress:
+      # -- Enable and configure ingress settings for the chart under this key.
+      main:
+        enabled: true
+        hosts:
+          - host: replaceme
+            paths:
+              - path: /
+                pathType: Prefix
+                service:
+                  port: http
+
+    # -- Configure persistence settings for the chart under this key.
+    persistence:
+      config:
+        enabled: true
+        type: pvc
+        storageClass: openebs-jiva
+        accessMode: ReadWriteOnce
+        size: 1Gi
+        mountPath: /config

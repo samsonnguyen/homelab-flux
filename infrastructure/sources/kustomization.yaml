@@ -18,3 +18,4 @@ resources:
   - vmware-tanzu.yaml
   - nvidia.yaml
   - invoiceninja.yaml
+  - bjw-s.yaml
