@@ -58,3 +58,11 @@ patches:
       - op: replace
         path: /spec/routes/0/match
         value: Host(`sabnzbd.samsonnguyen.ca`)
+  - target:
+      kind: IngressRoute
+      name: overseerr-ingress
+      namespace: media
+    patch: |-
+      - op: replace
+        path: /spec/routes/0/match
+        value: Host(`requests.samsonnguyen.ca`)
