@@ -5,8 +5,9 @@ metadata:
 spec:
   values:
     image:
-      repository: ghcr.io/k8s-at-home/plex-pass
-      tag: latest
+      repository: ghcr.io/onedr0p/plex
+      tag: rolling
+      pullPolicy: Always
     env:
       PUID: "1001"
       PGID: "1001"
@@ -33,8 +34,8 @@ spec:
       # video:x:44:
       # render:x:109:
       supplementalGroups:
-      - 998
-      - 39
+        - 998
+        - 39
     resources:
       requests:
         # Hardware acceleration using an Intel iGPU w/ QuickSync and
