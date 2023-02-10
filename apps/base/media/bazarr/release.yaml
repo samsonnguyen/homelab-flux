@@ -25,3 +25,9 @@ spec:
         selector:
           matchLabels:
             app: bazarr
+      config:
+        enabled: true
+        accessMode: ReadWriteOnce
+        storageClass: local-hostpath
+        type: pvc
+        size: 15Gi
