@@ -4,5 +4,9 @@ metadata:
   name: bazarr
 spec:
   values:
+    image:
+      repository: ghcr.io/onedr0p/bazarr
+      tag: rolling
+      pullPolicy: Always
     podAnnotations:
       backup.velero.io/backup-volumes: config
