@@ -19,22 +19,22 @@ spec:
         app: brother-printer
     spec:
       containers:
-      - name: brother-printer
-        image: samsonnguyen/docker-brother-mfc-l27x0dw
-        imagePullPolicy: Always
-        env:
-        - name: MODEL
-          value: Brother-MFC-L2700DW
-        - name: PRINTER_IP
-          value: "192.168.1.62"
-        - name: PRINTER_NAME
-          value: Brother-MFC-L2700DW
-        volumeMounts:
-        - mountPath: /scans
-          name: scans
+        - name: brother-printer
+          image: samsonnguyen/docker-brother-mfc-l27x0dw
+          imagePullPolicy: Always
+          env:
+            - name: MODEL
+              value: Brother-MFC-L2700DW
+            - name: PRINTER_IP
+              value: "192.168.1.84"
+            - name: PRINTER_NAME
+              value: Brother-MFC-L2700DW
+          volumeMounts:
+            - mountPath: /scans
+              name: scans
       volumes:
-      - name: scans
-        nfs:
-          path: /mnt/storage_1/k8s/manual/paperless/paperless-consume
-          server: freenas-int.samsonnguyen.ca
+        - name: scans
+          nfs:
+            path: /mnt/storage_1/k8s/manual/paperless/paperless-consume
+            server: freenas-int.samsonnguyen.ca
       hostNetwork: true
