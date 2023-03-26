@@ -27,32 +27,12 @@ spec:
         size: 15Gi
       shared:
         enabled: true
-        type: custom
-        volumeSpec:
-          accessModes:
-          - ReadWriteMany
-          resources:
-            requests:
-              storage: 8Ti
-          volumeMode: Filesystem
-          volumeName: sonarr-shared
-          selector:
-            matchLabels:
-              app: plex
+        type: pvc
+        existingClaim: plex-shared
       shared-tv:
         enabled: true
-        type: custom
-        volumeSpec:
-          accessModes:
-          - ReadWriteMany
-          resources:
-            requests:
-              storage: 8Ti
-          volumeMode: Filesystem
-          volumeName: sonarr-shared
-          selector:
-            matchLabels:
-              app: plex-tv
+        type: pvc
+        existingClaim: plex-shared-tv
       # transcode:
       #   enabled: true
       #   accessMode: ReadWriteOnce
