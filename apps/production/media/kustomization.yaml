@@ -3,11 +3,13 @@ kind: Kustomization
 namespace: media
 resources:
   - plex-media-pv.yaml
+  - plex-media-tv-pv.yaml
   - radarr-media-pv.yaml
   - sonarr-media-pv.yaml
   - sabnzbd-media-pv.yaml
   - sabnzbd-media-tv-pv.yaml
   - bazarr-media-pv.yaml
+  - bazarr-media-tv-pv.yaml
   - ../../base/media
 patchesStrategicMerge:
   - plex-values.yaml

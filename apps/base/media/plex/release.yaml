@@ -31,18 +31,14 @@ spec:
         type: pvc
         storageClass: ""
         size: 8Ti
-        selector:
-          matchLabels:
-            app: plex
+        volumeName: plex-shared
       shared-tv:
         enabled: true
         accessMode: ReadWriteMany
         type: pvc
         storageClass: ""
         size: 8Ti
-        selector:
-          matchLabels:
-            app: plex-tv
+        volumeName: plex-shared-tv
       # transcode:
       #   enabled: true
       #   accessMode: ReadWriteOnce
