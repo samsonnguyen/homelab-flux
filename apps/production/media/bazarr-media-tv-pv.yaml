@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: bazarr-shared
+  name: bazarr-shared-tv
   labels:
     app: bazarr
 spec:
@@ -11,6 +11,6 @@ spec:
   capacity:
     storage: 8Ti
   nfs:
-    path: /mnt/media
+    path: /mnt/media2
     server: kube-worker2.samsonnguyen.ca
   volumeMode: Filesystem

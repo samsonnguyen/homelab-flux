@@ -24,8 +24,4 @@ spec:
         size: 15Gi
       shared:
         enabled: true
-        accessMode: ReadWriteMany
-        type: pvc
-        storageClass: ""
-        size: 8Ti
-        volumeName: radarr-shared
+        existingClaim: radarr-shared

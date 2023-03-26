@@ -18,18 +18,10 @@ spec:
     persistence:
       shared:
         enabled: true
-        accessMode: ReadWriteMany
-        type: pvc
-        storageClass: ""
-        size: 8Ti
-        volumeName: bazarr-shared
+        existingClaim: bazarr-shared
       shared-tv:
         enabled: true
-        accessMode: ReadWriteMany
-        type: pvc
-        storageClass: ""
-        size: 8Ti
-        volumeName: bazarr-shared-tv
+        existingClaim: bazarr-shared-tv
       config:
         enabled: true
         accessMode: ReadWriteOnce

@@ -25,8 +25,4 @@ spec:
         size: 15Gi
       shared:
         enabled: true
-        accessMode: ReadWriteMany
-        type: pvc
-        storageClass: ""
-        size: 8Ti
-        volumeName: sabnzbd-shared
+        existingClaim: sabnzbd-shared
