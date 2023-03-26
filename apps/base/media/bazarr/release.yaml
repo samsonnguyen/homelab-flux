@@ -25,6 +25,15 @@ spec:
         selector:
           matchLabels:
             app: bazarr
+      shared-tv:
+        enabled: true
+        accessMode: ReadWriteMany
+        type: pvc
+        storageClass: ""
+        size: 8Ti
+        selector:
+          matchLabels:
+            app: bazarr-tv
       config:
         enabled: true
         accessMode: ReadWriteOnce
