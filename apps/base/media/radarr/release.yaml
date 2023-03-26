@@ -24,4 +24,5 @@ spec:
         size: 15Gi
       shared:
         enabled: true
+        type: pvc
         existingClaim: radarr-shared

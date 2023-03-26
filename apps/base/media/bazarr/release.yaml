@@ -18,9 +18,11 @@ spec:
     persistence:
       shared:
         enabled: true
+        type: pvc
         existingClaim: bazarr-shared
       shared-tv:
         enabled: true
+        type: pvc
         existingClaim: bazarr-shared-tv
       config:
         enabled: true
