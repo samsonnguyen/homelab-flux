@@ -41,6 +41,7 @@ spec:
               app: plex
       shared-tv:
         enabled: true
+        type: custom
         volumeSpec:
           accessModes:
           - ReadWriteMany
