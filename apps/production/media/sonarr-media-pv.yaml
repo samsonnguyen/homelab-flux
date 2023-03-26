@@ -11,6 +11,6 @@ spec:
   capacity:
     storage: 8Ti
   nfs:
-    path: /mnt/storage_1/movies
-    server: freenas-int.samsonnguyen.ca
+    path: /mnt/media2
+    server: kube-worker2.samsonnguyen.ca
   volumeMode: Filesystem

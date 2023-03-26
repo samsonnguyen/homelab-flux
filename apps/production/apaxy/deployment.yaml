@@ -24,10 +24,16 @@ spec:
         ports:
           - containerPort: 80
         volumeMounts:
-          - mountPath: /app/web
+          - mountPath: /app/web/Movies
             name: movies-data
+          - mountPath: /app/web/TV
+            name: tv-data
       volumes:
         - name: movies-data
           nfs:
-            path: /mnt/storage_1/movies
-            server: freenas-int.samsonnguyen.ca
+            path: /mnt/media
+            server: kube-worker2.samsonnguyen.ca
+        - name: tv-data
+          nfs:
+            path: "/mnt/media2"
+            server: kube-worker2.samsonnguyen.ca

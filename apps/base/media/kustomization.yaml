@@ -8,4 +8,5 @@ resources:
   - bazarr
   - plex
   - sabnzbd
+  - sabnzbd-tv
   - overseerr

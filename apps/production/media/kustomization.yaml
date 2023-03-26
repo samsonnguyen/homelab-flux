@@ -6,6 +6,7 @@ resources:
   - radarr-media-pv.yaml
   - sonarr-media-pv.yaml
   - sabnzbd-media-pv.yaml
+  - sabnzbd-media-tv-pv.yaml
   - bazarr-media-pv.yaml
   - ../../base/media
 patchesStrategicMerge:
@@ -58,6 +59,14 @@ patches:
       - op: replace
         path: /spec/routes/0/match
         value: Host(`sabnzbd.samsonnguyen.ca`)
+  - target:
+      kind: IngressRoute
+      name: sabnzbd-tv-ingress
+      namespace: media
+    patch: |-
+      - op: replace
+        path: /spec/routes/0/match
+        value: Host(`sabnzbd-tv.samsonnguyen.ca`)
   - target:
       kind: IngressRoute
       name: overseerr-ingress
