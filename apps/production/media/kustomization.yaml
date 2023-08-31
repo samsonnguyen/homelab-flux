@@ -4,6 +4,8 @@ namespace: media
 resources:
   - plex-media-pv.yaml
   - plex-media-tv-pv.yaml
+  - jellyfin-media-pv.yaml
+  - jellyfin-media-tv-pv.yaml
   - radarr-media-pv.yaml
   - sonarr-media-pv.yaml
   - sabnzbd-media-pv.yaml
@@ -77,3 +79,11 @@ patches:
       - op: replace
         path: /spec/routes/0/match
         value: Host(`requests.samsonnguyen.ca`)
+  - target:
+      kind: IngressRoute
+      name: jellyfin-ingress
+      namespace: media
+    patch: |-
+      - op: replace
+        path: /spec/routes/0/match
+        value: Host(`jellyfin.samsonnguyen.ca`)

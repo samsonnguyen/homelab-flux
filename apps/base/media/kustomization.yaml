@@ -10,3 +10,4 @@ resources:
   - sabnzbd
   - sabnzbd-tv
   - overseerr
+  - jellyfin
