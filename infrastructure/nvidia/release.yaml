@@ -13,6 +13,16 @@ spec:
         namespace: flux-system
   interval: 1h0m0s
   values:
+    config:
+      map:
+        default: |
+          version: v1
+          sharing:
+            timeSlicing:
+              resources:
+              - name: nvidia.com/gpu
+                replicas: 2
+
     affinity:
       nodeAffinity:
         requiredDuringSchedulingIgnoredDuringExecution:
