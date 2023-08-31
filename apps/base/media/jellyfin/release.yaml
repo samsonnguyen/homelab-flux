@@ -37,6 +37,21 @@ spec:
       # -- Config dir
       DATA_FOLDER: "config"
 
+    resources:
+      requests:
+        # Hardware acceleration using an Intel iGPU w/ QuickSync and
+        # using intel-gpu-plugin (https://github.com/intel/intel-device-plugins-for-kubernetes)
+        gpu.intel.com/i915: 1
+        nvidia.com/gpu: 1
+        cpu: 200m
+        memory: 500Mi
+      limits:
+        # Hardware acceleration using an Intel iGPU w/ QuickSync and
+        # using intel-gpu-plugin (https://github.com/intel/intel-device-plugins-for-kubernetes)
+        gpu.intel.com/i915: 1
+        nvidia.com/gpu: 1
+        memory: "6Gi"
+
     # -- Configures service settings for the chart.
     service:
       main:
@@ -62,6 +77,7 @@ spec:
         enabled: true
         type: pvc
         accessMode: ReadWriteOnce
+        storageClass: local-hostpath
         size: 1Gi
         mountPath: /config
       shared:
