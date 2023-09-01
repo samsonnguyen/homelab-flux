@@ -36,6 +36,7 @@ spec:
     env:
       # -- Config dir
       DATA_FOLDER: "config"
+      JELLYFIN_PublishedServerUrl: "https://jellyfin.samsonnguyen.com"
 
     resources:
       requests:
