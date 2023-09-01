@@ -1,0 +1,23 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: jellyfin-ingress
+  labels:
+    revision: "1"
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`jellyfin.samsonnguyen.ca`)
+      kind: Rule
+      services:
+        - name: "jellyfin"
+          port: "http"
+          namespace: "media"
+      middlewares:
+      - name: traefik-redirect-scheme@kubernetescrd
+  tls:
+    secretName: default-samsonnguyen-ca
+    domains:
+      - main: samsonnguyen.ca
