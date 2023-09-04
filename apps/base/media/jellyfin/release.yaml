@@ -55,8 +55,8 @@ spec:
 
     # -- Configures service settings for the chart.
     service:
-      externalTrafficPolicy: Local
       main:
+        externalTrafficPolicy: Local
         ports:
           http:
             port: 8096
