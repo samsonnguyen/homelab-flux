@@ -56,6 +56,8 @@ spec:
     # -- Configures service settings for the chart.
     service:
       main:
+        annotations:
+          metallb.universe.tf/loadBalancerIPs: "10.0.11.6"
         externalTrafficPolicy: Local
         type: LoadBalancer
         ports:
