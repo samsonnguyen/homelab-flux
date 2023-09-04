@@ -4,4 +4,5 @@ metadata:
   name: traefik
 spec:
   interval: 5m
-  url: https://helm.traefik.io/traefik
+  url: https://traefik.github.io/charts
+
