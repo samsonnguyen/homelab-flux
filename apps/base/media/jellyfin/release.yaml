@@ -59,7 +59,7 @@ spec:
         externalTrafficPolicy: Local
         ports:
           http:
-            port: 8096
+            port: "8096"
 
     ingress:
       # -- Enable and configure ingress settings for the chart under this key.
