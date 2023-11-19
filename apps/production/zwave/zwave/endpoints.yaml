@@ -6,4 +6,4 @@ subsets:
   - addresses:
       - ip: 192.168.1.108
     ports:
-      - port: 3000
+      - port: 8091
