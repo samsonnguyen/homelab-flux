@@ -1,0 +1,7 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: k8s-home-lab
+spec:
+  interval: 30m
+  url: https://k8s-home-lab.github.io/helm-charts/
