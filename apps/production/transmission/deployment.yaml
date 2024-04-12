@@ -22,7 +22,15 @@ spec:
         name: transmission
         resources: {}
         ports:
-          - containerPort: 80
+          - containerPort: 9091
+            name: web
+            protocol: TCP
+          - containerPort: 51413
+            name: tor
+            protocol: TCP
+          - containerPort: 51413
+            name: tor
+            protocol: UDP    
         volumeMounts:
           - mountPath: /data/movies
             name: movies-data
