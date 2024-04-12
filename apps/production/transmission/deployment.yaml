@@ -29,7 +29,7 @@ spec:
             name: tor
             protocol: TCP
           - containerPort: 51413
-            name: tor
+            name: tor-udp
             protocol: UDP    
         volumeMounts:
           - mountPath: /data/movies
