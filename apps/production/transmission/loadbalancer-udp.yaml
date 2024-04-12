@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: transmission-udp
+  annotations:
+    metallb.universe.tf/allow-shared-ip: "true"
+spec:
+  loadBalancerIP: 10.0.11.7
+  ports:
+  - name: tor
+    port: 51413
+    targetPort: 51413
+    protocol: UDP
+  selector:
+    app: transmission
+  sessionAffinity: None
+  type: LoadBalancer

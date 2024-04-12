@@ -8,5 +8,5 @@ spec:
     app: transmission
   ports:
   - name: web
-    port: 80
-    targetPort: 80
+    port: 9091
+    targetPort: 9091

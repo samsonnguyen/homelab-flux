@@ -8,3 +8,5 @@ resources:
   - service.yaml
   - pvc.yml
   - config.pv.yaml
+  - loadbalancer-tcp.yaml
+  - loadbalancer-udp.yaml
