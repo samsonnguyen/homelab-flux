@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: transmission
+  name: transmission
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: transmission
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: transmission
+    spec:
+      containers:
+      - image: lscr.io/linuxserver/transmission:latest
+        imagePullPolicy: Always
+        name: transmission
+        resources: {}
+        ports:
+          - containerPort: 80
+        volumeMounts:
+          - mountPath: /data/movies
+            name: movies-data
+          - mountPath: /data/tv-shows
+            name: tv-data
+          - mountPath: /config
+            name: transmissions-config
+        environment:
+          - PUID=1000
+          - PGID=1000
+          - TZ=Etc/UTC
+      volumes:
+        - name: movies-data
+          nfs:
+            path: /mnt/media
+            server: kube-worker2.samsonnguyen.ca
+        - name: tv-data
+          nfs:
+            path: /mnt/media2
+            server: kube-worker2.samsonnguyen.ca
+        - name: transmissions-config
+          persistentVolumeClaim:
+            claimName: transmissions-config

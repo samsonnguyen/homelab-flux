@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: transmissions-config
+  labels:
+    app: transmissions-config
+spec:
+  accessModes:
+  - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  capacity:
+    storage: 1Gi
+  nfs:
+    path: /mnt/media2
+    server: kube-worker2.samsonnguyen.ca
+  volumeMode: Filesystem

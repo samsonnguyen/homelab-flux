@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    kubernetes.io/ingress.class: traefik
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    traefik.ingress.kubernetes.io/router.middlewares: traefik-sso@kubernetescrd
+    traefik.ingress.kubernetes.io/router.tls: "true"
+  name: transmission
+spec:
+  rules:
+  - host: transmission.samsonnguyen.ca
+    http:
+      paths:
+      - backend:
+          service:
+            name: transmission
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+  tls:
+  - hosts:
+    - transmission.samsonnguyen.ca
+    secretName: transmission-samsonnguyen-ca-tls
+status:
+  loadBalancer: {}

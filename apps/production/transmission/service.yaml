@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: transmission
+spec:
+  selector:
+    app: transmission
+  ports:
+  - name: web
+    port: 80
+    targetPort: 80
