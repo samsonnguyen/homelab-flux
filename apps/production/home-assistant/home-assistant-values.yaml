@@ -5,6 +5,8 @@ metadata:
   namespace: home-assistant
 spec:
   values:
+    image:
+      tag: "2024.5"
     affinity:
       nodeAffinity:
         preferredDuringSchedulingIgnoredDuringExecution:
