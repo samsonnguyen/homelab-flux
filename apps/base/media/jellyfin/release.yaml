@@ -23,7 +23,7 @@ spec:
       # -- image repository
       repository: jellyfin/jellyfin
       # -- image pull policy
-      pullPolicy: IfNotPresent
+      pullPolicy: Always
       # -- image tag
       # this example is not automatically updated, so be sure to use the latest image
       tag: latest
