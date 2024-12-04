@@ -15,7 +15,7 @@ spec:
   values:
     image:
       # -- image repository
-      repository: linuxserver/overseerr
+      repository:  sctx/overseerr
       # -- image pull policy
       pullPolicy: Always
       # -- image tag
@@ -28,7 +28,6 @@ spec:
     # -- environment variables.
     # See [image docs](https://github.com/dani-garcia/vaultwarden/blob/main/.env.template) for more details.
     env:
-      # -- Config dir
       PUID: 1000
       PGID: 1000
       TZ: "America/Edmonton"
@@ -53,4 +52,4 @@ spec:
         storageClass: openebs-jiva-csi-default
         accessMode: ReadWriteOnce
         size: 1Gi
-        mountPath: /config
+        mountPath: /app/config
