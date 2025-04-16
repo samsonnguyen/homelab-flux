@@ -17,3 +17,8 @@ freenas-iscsi.yaml
 freenas-nfs.yaml
 *.secret
 .DS_store
+rke/cluster.rkestate
+rke/kube_config_cluster.yml
+rke/kube_config_cluster.yml.backup
+rke/kube_config1605502273
+rke/rkestate643125858

@@ -1,0 +1,9 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: nfs
+provisioner: example.com/external-nfs
+parameters:
+  server: freenas-int.samsonnguyen.ca
+  path: /share
+  readOnly: "false"
