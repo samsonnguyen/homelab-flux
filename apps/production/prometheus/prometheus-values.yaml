@@ -64,18 +64,6 @@ spec:
             cpu: 1500m
         retention: 10d
       additionalServiceMonitors:
-        - name: nextcloud
-          endpoints:
-          - path: metrics
-            port: metrics
-          namespaceSelector:
-            matchNames:
-            - nextcloud
-          podTargetLabels:
-          - app.kubernetes.io/component=metrics
-          selector:
-            matchLabels:
-              app.kubernetes.io/instance: nextcloud
         - name: pve2-metrics
           endpoints:
           - path: metrics

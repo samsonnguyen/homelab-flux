@@ -4,7 +4,6 @@ resources:
   - cert-manager
   - traefik
   - prometheus
-  - ../base/nextcloud
   - ../base/loki-stack
   - mqtt
   - ../base/cloudflare-ddns
@@ -24,14 +23,4 @@ resources:
   - invoiceninja
   - transmission
 patchesStrategicMerge:
-  - nextcloud-values.yaml
   - loki-stack-values.yaml
-patches:
-  - target:
-      kind: IngressRoute
-      name: nextcloud-ingress
-      namespace: nextcloud
-    patch: |-
-      - op: replace
-        path: /spec/routes/0/match
-        value: Host(`cloud.samsonnguyen.ca`)

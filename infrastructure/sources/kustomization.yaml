@@ -4,7 +4,6 @@ namespace: flux-system
 resources:
   - bitnami.yaml
   - prometheus-community.yaml
-  - nextcloud.yaml
   - democratic-csi.yaml
   - grafana.yaml
   - traefik.yaml

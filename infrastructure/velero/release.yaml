@@ -48,7 +48,6 @@ spec:
           - home-assistant
           - heimdall
           - mqtt
-          - nextcloud
           - node-red
           - paperless
           - prometheus
