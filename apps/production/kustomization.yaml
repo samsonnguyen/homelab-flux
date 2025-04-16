@@ -19,7 +19,6 @@ resources:
   - zwave
   - apaxy
   - unifi-poller
-  - huginn
   - paperless
   - brother-printer
   - invoiceninja

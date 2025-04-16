@@ -47,7 +47,6 @@ spec:
           - chevereto
           - home-assistant
           - heimdall
-          - huginn
           - mqtt
           - nextcloud
           - node-red
