@@ -1,13 +1,12 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - pv.yaml
-  - ../../base/node-red
-patchesStrategicMerge:
-  - node-red-values.yaml
+- pv.yaml
+- ../../base/node-red
 patches:
-  - target:
-      kind: IngressRoute
-      name: node-red-ingress
-      namespace: node-red
-    path: ingressroute-patch.yaml
+- path: ingressroute-patch.yaml
+  target:
+    kind: IngressRoute
+    name: node-red-ingress
+    namespace: node-red
+- path: node-red-values.yaml

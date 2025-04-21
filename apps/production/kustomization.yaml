@@ -1,26 +1,26 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - cert-manager
-  - traefik
-  - prometheus
-  - ../base/loki-stack
-  - mqtt
-  - ../base/cloudflare-ddns
-  - ../base/rtsptoweb
-  - home-assistant
-  - node-red
-  - media
-  - chevereto
-  - heimdall
-  - metrics
-  - graphite
-  - zwave
-  - apaxy
-  - unifi-poller
-  - paperless
-  - brother-printer
-  - invoiceninja
-  - transmission
-patchesStrategicMerge:
-  - loki-stack-values.yaml
+- cert-manager
+- traefik
+- prometheus
+- ../base/loki-stack
+- mqtt
+- ../base/cloudflare-ddns
+- ../base/rtsptoweb
+- home-assistant
+- node-red
+- media
+- chevereto
+- heimdall
+- metrics
+- graphite
+- zwave
+- apaxy
+- unifi-poller
+- paperless
+- brother-printer
+- invoiceninja
+- transmission
+patches:
+- path: loki-stack-values.yaml

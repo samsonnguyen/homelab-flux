@@ -2,80 +2,79 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: media
 resources:
-  - plex-media-pv.yaml
-  - plex-media-tv-pv.yaml
-  - jellyfin-media-pv.yaml
-  - jellyfin-media-tv-pv.yaml
-  - radarr-media-pv.yaml
-  - sonarr-media-pv.yaml
-  - sabnzbd-media-pv.yaml
-  - sabnzbd-media-tv-pv.yaml
-  - bazarr-media-pv.yaml
-  - bazarr-media-tv-pv.yaml
-  - ../../base/media
-patchesStrategicMerge:
-  - plex-values.yaml
+- plex-media-pv.yaml
+- plex-media-tv-pv.yaml
+- jellyfin-media-pv.yaml
+- jellyfin-media-tv-pv.yaml
+- radarr-media-pv.yaml
+- sonarr-media-pv.yaml
+- sabnzbd-media-pv.yaml
+- sabnzbd-media-tv-pv.yaml
+- bazarr-media-pv.yaml
+- bazarr-media-tv-pv.yaml
+- ../../base/media
   # - radarr-values.yaml
-  - sonarr-values.yaml
-  - sabnzbd-values.yaml
-  - bazarr-values.yaml
-  - overseerr-values.yaml
 patches:
-  - target:
-      kind: IngressRoute
-      name: plex-ingress
-      namespace: media
-    patch: |-
-      - op: replace
-        path: /spec/routes/0/match
-        value: Host(`plex.samsonnguyen.ca`)
-      - op: remove
-        path: /spec/routes/0/middlewares/0
-  - target:
-      kind: IngressRoute
-      name: sonarr-ingress
-      namespace: media
-    patch: |-
-      - op: replace
-        path: /spec/routes/0/match
-        value: Host(`sonarr.samsonnguyen.ca`)
-  - target:
-      kind: IngressRoute
-      name: radarr-ingress
-      namespace: media
-    patch: |-
-      - op: replace
-        path: /spec/routes/0/match
-        value: Host(`radarr.samsonnguyen.ca`)
-  - target:
-      kind: IngressRoute
-      name: bazarr-ingress
-      namespace: media
-    patch: |-
-      - op: replace
-        path: /spec/routes/0/match
-        value: Host(`bazarr.samsonnguyen.ca`)
-  - target:
-      kind: IngressRoute
-      name: sabnzbd-ingress
-      namespace: media
-    patch: |-
-      - op: replace
-        path: /spec/routes/0/match
-        value: Host(`sabnzbd.samsonnguyen.ca`)
-  - target:
-      kind: IngressRoute
-      name: sabnzbd-tv-ingress
-      namespace: media
-    patch: |-
-      - op: replace
-        path: /spec/routes/0/match
-        value: Host(`sabnzbd-tv.samsonnguyen.ca`)
-  - target:
-      kind: IngressRoute
-      name: overseerr-ingress
-      namespace: media
-    patch: |-
-      - op: replace
-        path: /spec/routes/0/match
-        value: Host(`requests.samsonnguyen.ca`)
+- patch: |-
+    - op: replace
+      path: /spec/routes/0/match
+      value: Host(`plex.samsonnguyen.ca`)
+    - op: remove
+      path: /spec/routes/0/middlewares/0
+  target:
+    kind: IngressRoute
+    name: plex-ingress
+    namespace: media
+- patch: |-
+    - op: replace
+      path: /spec/routes/0/match
+      value: Host(`sonarr.samsonnguyen.ca`)
+  target:
+    kind: IngressRoute
+    name: sonarr-ingress
+    namespace: media
+- patch: |-
+    - op: replace
+      path: /spec/routes/0/match
+      value: Host(`radarr.samsonnguyen.ca`)
+  target:
+    kind: IngressRoute
+    name: radarr-ingress
+    namespace: media
+- patch: |-
+    - op: replace
+      path: /spec/routes/0/match
+      value: Host(`bazarr.samsonnguyen.ca`)
+  target:
+    kind: IngressRoute
+    name: bazarr-ingress
+    namespace: media
+- patch: |-
+    - op: replace
+      path: /spec/routes/0/match
+      value: Host(`sabnzbd.samsonnguyen.ca`)
+  target:
+    kind: IngressRoute
+    name: sabnzbd-ingress
+    namespace: media
+- patch: |-
+    - op: replace
+      path: /spec/routes/0/match
+      value: Host(`sabnzbd-tv.samsonnguyen.ca`)
+  target:
+    kind: IngressRoute
+    name: sabnzbd-tv-ingress
+    namespace: media
+- patch: |-
+    - op: replace
+      path: /spec/routes/0/match
+      value: Host(`requests.samsonnguyen.ca`)
+  target:
+    kind: IngressRoute
+    name: overseerr-ingress
+    namespace: media
+- path: plex-values.yaml
+- path: sonarr-values.yaml
+- path: sabnzbd-values.yaml
+- path: bazarr-values.yaml
+- path: overseerr-values.yaml

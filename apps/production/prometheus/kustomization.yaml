@@ -2,23 +2,22 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: prometheus
 resources:
-  - ../../base/prometheus
-patchesStrategicMerge:
-  - prometheus-values.yaml
+- ../../base/prometheus
 patches:
-  - target:
-      kind: IngressRoute
-      name: prometheus-ingress
-      namespace: prometheus
-    patch: |-
-      - op: replace
-        path: /spec/routes/0/match
-        value: Host(`metrics.samsonnguyen.ca`)
-  - target:
-      kind: IngressRoute
-      name: grafana-ingress
-      namespace: prometheus
-    patch: |-
-      - op: replace
-        path: /spec/routes/0/match
-        value: Host(`grafana.samsonnguyen.ca`)
+- patch: |-
+    - op: replace
+      path: /spec/routes/0/match
+      value: Host(`metrics.samsonnguyen.ca`)
+  target:
+    kind: IngressRoute
+    name: prometheus-ingress
+    namespace: prometheus
+- patch: |-
+    - op: replace
+      path: /spec/routes/0/match
+      value: Host(`grafana.samsonnguyen.ca`)
+  target:
+    kind: IngressRoute
+    name: grafana-ingress
+    namespace: prometheus
+- path: prometheus-values.yaml
