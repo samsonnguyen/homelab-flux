@@ -1,50 +1,109 @@
+---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/fluxcd-community/flux2-schemas/main/helmrelease-helm-v2.json
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: home-assistant
   namespace: home-assistant
 spec:
+  interval: 1h
+  chart:
+    spec:
+      chart: app-template
+      version: 3.7.3
+      sourceRef:
+        kind: HelmRepository
+        name: bjw-s
+        namespace: flux-system
+      interval: 15m
+  install:
+    remediation:
+      retries: -1
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
   values:
-    image:
-      tag: "2024.5"
-    affinity:
-      nodeAffinity:
-        preferredDuringSchedulingIgnoredDuringExecution:
-        - weight: 1
-          preference:
-            matchExpressions:
-            - key: kubernetes.io/hostname
-              operator: In
-              values:
-              - kube-worker2
+    defaultPodOptions:
+      # required for mDNS and other host network features
+      hostNetwork: true
+    controllers:
+      home-assistant:
+        pod:
+          securityContext:
+            runAsUser: 1000
+            runAsGroup: 1000
+            fsGroup: 1000
+            fsGroupChangePolicy: OnRootMismatch
+
+        containers:
+          app:
+            image:
+              repository: ghcr.io/home-assistant/home-assistant
+              tag: 2025.4.3
+            env:
+              TZ: "America/Edmonton"
+              PYTHONPATH: "/config/deps"
+              UV_SYSTEM_PYTHON: "true"
+              UV_NO_CACHE: "true"
+              VENV_FOLDER: /venv
+            envFrom:
+              - secretRef:
+                  name: home-assistant-secret
+
+            resources:
+              requests:
+                cpu: 50m
+                memory: 512M
+              limits:
+                memory: 2Gi
+            # commented due to limitations with official home-assistant image
+            # securityContext:
+            #   allowPrivilegeEscalation: false
+            #   readOnlyRootFilesystem: true
+            #   capabilities:
+            #     drop:
+            #       - ALL
+
+          
+    service:
+      main:
+        primary: true
+        type: LoadBalancer
+        controller: home-assistant
+        loadBalancerIP: 10.0.11.8
+        ports:
+          http:
+            port: 8123
+
+    persistence:
+      config:
+        enabled: "true"
+        type: persistantVolumeClaim
+        existingClaim: home-assistant-config
+      hass-cache:
+        storageClass: "openebs-jiva"
+        accessMode: ReadWriteOnce
+        size: "1Gi"
+        advancedMounts:
+          home-assistant:
+            app:
+              - path: /venv
+                subPath: hass-venv
+
     ingress:
       main:
-        enabled: true
+        # ensure that external DNS (cloudflare) has an entry for this directed to the router
+        # ensure that internal DNS for this zone (coredns) has an entry for this directed to nginx LB IP
+        className: "traefik"
         hosts:
-        - host: homeassist.samsonnguyen.ca
-          paths:
-            - path: /
-              pathType: Prefix
-        annotations:
-          kubernetes.io/ingress.class: traefik
-          cert-manager.io/cluster-issuer: letsencrypt-prod
-          traefik.ingress.kubernetes.io/router.entrypoints: websecure
-          traefik.ingress.kubernetes.io/router.tls: "true"
+          - host: &host "homeassist.samsonnguyen.ca"
+            paths:
+              - path: /
+                pathType: Prefix
+                service:
+                  identifier: main
+                  port: http
         tls:
-          - secretName: homeassist-samsonnguyen-ca-tls
-            hosts:
-              - homeassist.samsonnguyen.ca
-    prometheus:
-      serviceMonitor:
-        enabled: true
-        bearerTokenSecret:
-          name: prometheus-access-token
-          key: access_token
-    podAnnotations:
-      backup.velero.io/backup-volumes: config
-    mariadb:
-      podAnnotations:
-        backup.velero.io/backup-volumes: data
-      image:
-        repository: bitnami/mariadb
-        tag: 11.4
+          - hosts:
+              - *host
