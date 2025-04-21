@@ -84,7 +84,7 @@ spec:
         globalMounts:
           - path: /config
       hass-cache:
-        storageClass: "openebs-jiva"
+        storageClass: freenas-iscsi-csi
         accessMode: ReadWriteOnce
         size: "1Gi"
         advancedMounts:
