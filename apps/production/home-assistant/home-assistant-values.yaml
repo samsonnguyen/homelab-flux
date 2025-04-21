@@ -5,7 +5,7 @@ kind: HelmRelease
 metadata:
   name: home-assistant
   namespace: home-assistant
-spec:
+spec:  
   interval: 1h
   chart:
     spec:
@@ -19,6 +19,7 @@ spec:
   install:
     remediation:
       retries: -1
+    disableSchemaValidation: true
   upgrade:
     cleanupOnFail: true
     remediation:
