@@ -78,9 +78,9 @@ spec:
 
     persistence:
       config:
-        enabled: true
-        type: persistentVolumeClaim
         existingClaim: home-assistant-config
+        globalMounts:
+          - path: /config
       hass-cache:
         storageClass: "openebs-jiva"
         accessMode: ReadWriteOnce
