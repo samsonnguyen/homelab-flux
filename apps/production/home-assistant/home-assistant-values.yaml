@@ -79,6 +79,7 @@ spec:
     persistence:
       config:
         existingClaim: home-assistant-config
+        type: persistentVolumeClaim
         globalMounts:
           - path: /config
       hass-cache:
