@@ -78,7 +78,7 @@ spec:
 
     persistence:
       config:
-        enabled: "true"
+        enabled: true
         type: persistentVolumeClaim
         existingClaim: home-assistant-config
       hass-cache:
