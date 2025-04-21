@@ -1,6 +1,6 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
-namespace: paperless
 resources:
-  - namespace.yaml
-  - release.yaml
+- infrastructure.yaml
+- secrets.yaml
+- apps.yaml
