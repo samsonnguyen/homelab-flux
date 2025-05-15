@@ -16,6 +16,5 @@ resources:
   - utkuozdemir.yaml
   - vmware-tanzu.yaml
   - nvidia.yaml
-  - invoiceninja.yaml
   - bjw-s.yaml
   - k8s-home-lab.yaml

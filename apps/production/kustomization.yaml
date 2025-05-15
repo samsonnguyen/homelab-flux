@@ -20,7 +20,6 @@ resources:
 - unifi-poller
 - paperless
 - brother-printer
-- invoiceninja
 - transmission
 patches:
 - path: loki-stack-values.yaml
