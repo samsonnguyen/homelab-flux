@@ -11,3 +11,9 @@ Bootstrap command:
   --private-key-file=/Users/samsonnguyen/.ssh/id_rsa_private \
 --password="redacted" \
 --path=clusters/production
+```
+
+
+```
+flux reconcile ks apps --with-source
+```
