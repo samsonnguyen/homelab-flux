@@ -9,8 +9,8 @@ spec:
     spec:
       chart: mariadb
       sourceRef:
-        kind: HelmRepository
-        name: bitnami
+        kind: OCIRepository
+        name: bitnami-mariadb
         namespace: flux-system
   interval: 5m
   install:
