@@ -5,13 +5,10 @@ metadata:
   namespace: chevereto
 spec:
   releaseName: mariadb
-  chart:
-    spec:
-      chart: mariadb
-      sourceRef:
-        kind: OCIRepository
-        name: bitnami-mariadb
-        namespace: flux-system
+  chartRef:
+    kind: OCIRepository
+    name: bitnami-mariadb
+    namespace: flux-system
   interval: 5m
   install:
     remediation:
