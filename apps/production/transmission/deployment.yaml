@@ -36,6 +36,8 @@ spec:
             name: movies-data
           - mountPath: /data/tv-shows
             name: tv-data
+          - mountPath: /downloads
+            name: tv-data
           - mountPath: /config
             name: transmissions-config
         environment:
