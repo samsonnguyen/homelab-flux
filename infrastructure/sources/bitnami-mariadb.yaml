@@ -6,4 +6,4 @@ spec:
   interval: 5m0s
   url: oci://registry-1.docker.io/bitnamicharts/mariadb
   ref:
-    semver: "^6.5.0"
+    semver: "^20.5.0"
