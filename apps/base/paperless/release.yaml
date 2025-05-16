@@ -5,10 +5,8 @@ metadata:
 spec:
   releaseName: paperless
   chart:
-    spec:
-      chart: paperless
-      sourceRef:
-        kind: HelmRepository
-        name: k8s-at-home
-        namespace: flux-system
+    chartRef:
+    kind: OCIRepository
+    name: paperless-ngx
+    namespace: flux-system
   interval: 5m
