@@ -4,8 +4,7 @@ metadata:
   name: paperless
 spec:
   releaseName: paperless
-  chart:
-    chartRef:
+  chartRef:
     kind: OCIRepository
     name: paperless-ngx
     namespace: flux-system
