@@ -4,5 +4,6 @@ resources:
 - ../../base/paperless
 - paperless-consume-pv.yaml
 - paperless-media-pv.yaml
+- paperless-export-pv.yaml
 patches:
 - path: paperless-values.yaml
