@@ -26,6 +26,7 @@ ingress:
 services:
   kubelet: 
     extra_binds:
+    ## hostpath:containerpath
     - "/data:/data"
     - "/etc/iscsi:/etc/iscsi"
     - "/sbin/iscsiadm:/sbin/iscsiadm"
@@ -33,3 +34,8 @@ services:
     - "/lib/modules"
     - "/var/openebs:/var/openebs"
     - "/dev/dri:/dev/dri"
+    ## Install yum install compat-openssl10
+    - "/usr/lib64/libssl.so.10:/usr/lib/libssl.so.10"
+    - "/usr/lib64/libssl.so.1.1:/usr/lib/libssl.so.1.1"
+    - "/usr/lib64/libcrypto.so.10:/usr/lib/libcrypto.so.10"
+    - "/usr/lib64/libcrypto.so.1.1:/usr/lib/libcrypto.so.1.1"
