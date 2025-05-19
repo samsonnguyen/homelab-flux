@@ -39,6 +39,9 @@ spec:
         selector:
           matchLabels:
             app: paperless
+      export:
+        accessMode: ReadWriteOnce
+        size: 1Gi
     ingress:
       main:
         enabled: true
