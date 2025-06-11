@@ -9,6 +9,7 @@ spec:
       PAPERLESS_CONSUMPTION_DIR: /usr/src/paperless/consume
       PAPERLESS_CONSUMER_POLLING: 10
       PAPERLESS_BIND_ADDR: "0.0.0.0"
+      PAPERLESS_URL: "https://docs.samsonnguyen.ca"
     redis:
       enabled: true
       global:
@@ -56,9 +57,5 @@ spec:
           traefik.ingress.kubernetes.io/router.entrypoints: websecure
           traefik.ingress.kubernetes.io/router.tls: "true"
           traefik.ingress.kubernetes.io/router.middlewares: traefik-sso@kubernetescrd
-        tls:
-          - secretName: docs-samsonnguyen-ca-tls
-            hosts:
-              - docs.samsonnguyen.ca
     podAnnotations:
       backup.velero.io/backup-volumes: data
