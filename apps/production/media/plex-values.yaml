@@ -5,7 +5,7 @@ metadata:
 spec:
   values:
     image:
-      repository: ghcr.io/home-operations/home-assistant
+      repository: ghcr.io/home-operations/plex
       tag: rolling
       pullPolicy: Always
     env:
