@@ -15,6 +15,3 @@ spec:
           apiTokenSecretRef:
             name: cloudflare-api-token-secret
             key: api-token
-      selector:
-        dnsZones:
-          - 'samsonnguyen.ca'
