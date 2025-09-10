@@ -11,7 +11,6 @@ spec:
     solvers:
     - dns01:
         cloudflare:
-          email: samson@samsonnguyen.ca
           apiTokenSecretRef:
             name: cloudflare-api-token-secret
             key: api-token
