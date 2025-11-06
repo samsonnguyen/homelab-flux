@@ -65,3 +65,4 @@ spec:
               - key: id_rsa
                 path: id_rsa
       hostNetwork: true
+      dnsPolicy: ClusterFirstWithHostNet
