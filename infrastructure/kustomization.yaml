@@ -13,3 +13,4 @@ resources:
   - intel-gpu-plugin
   - velero
   - nvidia
+  - tailscale
