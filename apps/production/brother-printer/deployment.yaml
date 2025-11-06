@@ -35,7 +35,8 @@ spec:
         - name: inotify
           image: samsonnguyen/inotify-scp:latest
           env:
-            - name: INOTIFY_TARGET=/scans
+            - name: INOTIFY_TARGET
+              value: /scans
             - name: DESTINATION
               value: brother@paperless-sftp.samsonnguyen.ca:consume/
             - name: SSH_KEY
