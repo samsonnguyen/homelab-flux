@@ -40,8 +40,6 @@ spec:
               value: brother@paperless-sftp.samsonnguyen.ca:consume/
             - name: SSH_KEY
               value: /root/.ssh/id_rsa
-            - name: DESTINATION
-              value: brother@paperless-sftp.samsonnguyen.ca:consume/
           volumeMounts:
             - mountPath: /scans
               name: scans
