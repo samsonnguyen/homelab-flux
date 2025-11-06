@@ -18,9 +18,9 @@ spec:
         valueFrom:
           secretKeyRef:
             name: tailscale-oauth
-            key: clientId
+            key: clientid
       clientSecret:
         valueFrom:
           secretKeyRef:
             name: tailscale-oauth
-            key: clientSecret
+            key: clientsecret
