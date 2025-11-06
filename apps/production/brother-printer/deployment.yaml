@@ -65,5 +65,8 @@ spec:
               - key: id_rsa
                 path: id_rsa
                 mode: 0600
+              - key: known_hosts
+                path: known_hosts
+                mode: 0600
       hostNetwork: true
       dnsPolicy: ClusterFirstWithHostNet
