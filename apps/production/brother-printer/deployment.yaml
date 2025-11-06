@@ -64,5 +64,6 @@ spec:
             items:
               - key: id_rsa
                 path: id_rsa
+                mode: 0600
       hostNetwork: true
       dnsPolicy: ClusterFirstWithHostNet
