@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   annotations:
-    tailscale.com/tailnet-ip: paperless-sftp.samsonnguyen.ca
+    tailscale.com/tailnet-fqdn: paperless-paperless-sftp
   name: paperless-sftp
 spec:
   externalName: placeholder   # any value - will be overwritten by operator
