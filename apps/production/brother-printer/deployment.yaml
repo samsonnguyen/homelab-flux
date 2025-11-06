@@ -32,15 +32,22 @@ spec:
           volumeMounts:
             - mountPath: /scans
               name: scans
+          lifecycle:
+            preStop:
+              exec:
+                command: ["/bin/sh", "-c", "brscan-skey -t"]
         - name: inotify
           image: samsonnguyen/inotify-scp:latest
+          imagePullPolicy: Always
           env:
             - name: INOTIFY_TARGET
-              value: /scans
+              value: /scans/*
             - name: DESTINATION
               value: brother@paperless-sftp.samsonnguyen.ca:consume/
-            - name: SSH_KEY
+            - name: IDENTITY_FILE
               value: /root/.ssh/id_rsa
+            - name: INOTIFY_CFG_EVENTS
+              value: "create"
           volumeMounts:
             - mountPath: /scans
               name: scans
