@@ -12,7 +12,6 @@ resources:
   - sealed-secrets.yaml
   - k8s-at-home.yaml
   - openebs.yaml
-  - kiwigrid.yaml
   - utkuozdemir.yaml
   - vmware-tanzu.yaml
   - nvidia.yaml
