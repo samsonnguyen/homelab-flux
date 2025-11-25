@@ -31,7 +31,3 @@ spec:
           addresses:
             - 10.0.11.0/24
           avoid-buggy-ips: true
-    controller:
-      prometheus:
-        serviceMonitor:
-          enabled: true

@@ -41,6 +41,3 @@ spec:
         persistence:
           enabled: true
           storageClass: freenas-iscsi-csi
-    prometheus:
-      serviceMonitor:
-        enabled: true
