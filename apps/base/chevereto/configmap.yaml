@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: chevereto-php-ini
-data:
-  php.ini: |
-    memory_limit = 256M;
-    upload_max_filesize = 100M;
-    post_max_size = 100M;

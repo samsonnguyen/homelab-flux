@@ -20,11 +20,14 @@ nodes:
     hostname_override: kube-worker2
 
 network:
-  plugin: canal
+  plugin: flannel
 ingress:
   provider: none
 services:
+  kube-api:
+    admission_configuration: privileged
   kubelet: 
+    cluster_domain: cluster.local
     extra_binds:
     ## hostpath:containerpath
     - "/data:/data"
