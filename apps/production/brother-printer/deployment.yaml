@@ -49,15 +49,9 @@ spec:
             - name: INOTIFY_CFG_EVENTS
               value: "create"
           volumeMounts:
-            - mountPath: /scans
-              name: scans
             - mountPath: /root/.ssh
               name: brother-ssh
       volumes:
-        - name: scans
-          nfs:
-            path: /mnt/storage_1/k8s/manual/paperless/paperless-consume
-            server: freenas-int.samsonnguyen.ca
         - name: brother-ssh
           secret:
             secretName: brother-ssh

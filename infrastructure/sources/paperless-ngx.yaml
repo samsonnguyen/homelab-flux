@@ -1,9 +1,0 @@
-apiVersion: source.toolkit.fluxcd.io/v1beta2
-kind: OCIRepository
-metadata:
-  name: paperless-ngx
-spec:
-  interval: 5m0s
-  url: oci://ghcr.io/gabe565/charts/paperless-ngx
-  ref:
-    semver: "^0.24.0"

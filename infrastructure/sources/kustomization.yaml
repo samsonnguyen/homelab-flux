@@ -18,5 +18,4 @@ resources:
   - bjw-s.yaml
   - k8s-home-lab.yaml
   - bitnami-mariadb.yaml
-  - paperless-ngx.yaml
   - tailscale.yaml

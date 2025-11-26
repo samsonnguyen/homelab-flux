@@ -10,7 +10,6 @@ resources:
 - media
 - metrics
 - zwave
-- paperless
 - brother-printer
 - transmission
 patches:
