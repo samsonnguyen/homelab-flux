@@ -19,3 +19,4 @@ resources:
   - k8s-home-lab.yaml
   - bitnami-mariadb.yaml
   - tailscale.yaml
+  - metallb.yaml

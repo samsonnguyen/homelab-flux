@@ -9,25 +9,10 @@ spec:
       chart: metallb
       sourceRef:
         kind: HelmRepository
-        name: bitnami
+        name: metallb
         namespace: flux-system
       version: ~> 3.0
   interval: 1h0m0s
   install:
     remediation:
       retries: 3
-  values:
-    configInline:
-      peers:
-        - peer-address: 10.0.10.1
-          peer-asn: 64512
-          my-asn: 64500
-        - peer-address: 10.0.10.72
-          peer-asn: 64510
-          my-asn: 64500
-      address-pools:
-        - name: default
-          protocol: bgp
-          addresses:
-            - 10.0.11.0/24
-          avoid-buggy-ips: true
