@@ -49,9 +49,13 @@ spec:
             - name: INOTIFY_CFG_EVENTS
               value: "create"
           volumeMounts:
+            - mountPath: /scans
+              name: scans
             - mountPath: /root/.ssh
               name: brother-ssh
       volumes:
+        - name: scans
+          emptyDir: {}
         - name: brother-ssh
           secret:
             secretName: brother-ssh
