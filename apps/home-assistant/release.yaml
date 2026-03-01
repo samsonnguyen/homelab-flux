@@ -46,7 +46,7 @@ spec:
           app:
             image:
               repository: ghcr.io/home-assistant/home-assistant
-              tag: 2025.4.3
+              tag: 2026.2.3
             env:
               TZ: "America/Edmonton"
               PYTHONPATH: "/config/deps"
