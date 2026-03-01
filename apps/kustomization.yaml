@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - cert-manager
+  - traefik
+  - mqtt
+  - rtsptoweb
+  - home-assistant
+  - node-red
+  - media
+  - metrics
+  - zwave
+  - brother-printer
+  - transmission

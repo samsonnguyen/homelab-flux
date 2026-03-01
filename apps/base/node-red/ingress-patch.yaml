@@ -1,3 +1,0 @@
-- op: add
-  path: /spec/routes/0/services/0
-  value: {"name": "node-red", "port": 1880, "namespace": "node-red" }

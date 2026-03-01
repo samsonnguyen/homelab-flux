@@ -1,0 +1,38 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: bazarr
+spec:
+  releaseName: bazarr
+  chart:
+    spec:
+      chart: bazarr
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home
+        namespace: flux-system
+  interval: 5m
+  values:
+    image:
+      repository: ghcr.io/onedr0p/bazarr
+      tag: rolling
+      pullPolicy: Always
+    env:
+      TZ: "America/Edmonton"
+    persistence:
+      shared:
+        enabled: true
+        type: pvc
+        existingClaim: bazarr-shared
+      shared-tv:
+        enabled: true
+        type: pvc
+        existingClaim: bazarr-shared-tv
+      config:
+        enabled: true
+        accessMode: ReadWriteOnce
+        storageClass: local-hostpath
+        type: pvc
+        size: 15Gi
+    podAnnotations:
+      backup.velero.io/backup-volumes: config

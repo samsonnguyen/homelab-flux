@@ -1,0 +1,33 @@
+apiVersion: v1
+data:
+  config: |
+    address-pools:
+    - addresses:
+      - 10.0.11.0/24
+      avoid-buggy-ips: true
+      name: default
+      protocol: bgp
+    peers:
+    - my-asn: 64500
+      peer-address: 10.0.10.1
+      peer-asn: 64512
+    - my-asn: 64500
+      peer-address: 10.0.10.72
+      peer-asn: 64510
+kind: ConfigMap
+metadata:
+  annotations:
+    meta.helm.sh/release-name: metallb
+    meta.helm.sh/release-namespace: metallb-system
+  creationTimestamp: "2021-05-12T00:14:47Z"
+  labels:
+    app.kubernetes.io/instance: metallb
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: metallb
+    helm.sh/chart: metallb-3.0.12
+    helm.toolkit.fluxcd.io/name: metallb
+    helm.toolkit.fluxcd.io/namespace: metallb-system
+  name: metallb-config
+  namespace: metallb-system
+  resourceVersion: "1839144134"
+  uid: 86feb4c9-3399-429a-b9f2-0786d0e73c36

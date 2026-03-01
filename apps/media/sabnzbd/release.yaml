@@ -1,0 +1,32 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: sabnzbd
+spec:
+  releaseName: sabnzbd
+  chart:
+    spec:
+      chart: sabnzbd
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home
+        namespace: flux-system
+  interval: 5m
+  values:
+    env:
+      TZ: "America/Edmonton"
+      HAS_IPV6: false
+      HOST_WHITELIST_ENTRIES: sabnzbd.samsonnguyen.ca
+    persistence:
+      config:
+        enabled: true
+        storageClass: local-hostpath
+        accessMode: ReadWriteOnce
+        type: pvc
+        size: 15Gi
+      shared:
+        enabled: true
+        type: pvc
+        existingClaim: sabnzbd-shared
+    podAnnotations:
+      backup.velero.io/backup-volumes: config

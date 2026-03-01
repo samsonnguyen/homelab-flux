@@ -1,0 +1,23 @@
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: plex-ingress
+  labels:
+    revision: "1"
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`plex.samsonnguyen.ca`)
+      kind: Rule
+      services:
+        - name: plex
+          port: 32400
+          namespace: media
+      middlewares:
+        - name: traefik-redirect-scheme@kubernetescrd
+  tls:
+    secretName: default-samsonnguyen-ca
+    domains:
+      - main: samsonnguyen.ca

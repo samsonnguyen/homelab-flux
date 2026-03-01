@@ -1,0 +1,24 @@
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: sabnzbd-ingress
+  labels:
+    revision: "1"
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`sabnzbd.samsonnguyen.ca`)
+      kind: Rule
+      services:
+        - name: sabnzbd
+          port: 8080
+          namespace: media
+      middlewares:
+        - name: traefik-sso@kubernetescrd
+        - name: traefik-redirect-scheme@kubernetescrd
+  tls:
+    secretName: default-samsonnguyen-ca
+    domains:
+      - main: samsonnguyen.ca
