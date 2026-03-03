@@ -68,6 +68,30 @@ spec:
             #     drop:
             #       - ALL
 
+      code-server:
+        pod:
+          securityContext:
+            runAsUser: 1000
+            runAsGroup: 1000
+            fsGroup: 1000
+            fsGroupChangePolicy: OnRootMismatch
+        containers:
+          app:
+            image:
+              repository: ghcr.io/coder/code-server
+              tag: 4.96.4
+            args:
+              - --auth
+              - none
+              - --user-data-dir
+              - /config/.vscode
+              - /config
+            resources:
+              requests:
+                cpu: 10m
+                memory: 128M
+              limits:
+                memory: 512M
 
     service:
       main:
@@ -78,6 +102,13 @@ spec:
         ports:
           http:
             port: 8123
+
+      code-server:
+        type: ClusterIP
+        controller: code-server
+        ports:
+          http:
+            port: 8080
 
     persistence:
       config:
@@ -124,3 +155,16 @@ spec:
         tls:
           - hosts:
               - *host
+      code-server:
+        className: "traefik"
+        hosts:
+          - host: &codeHost "hass-editor.samsonnguyen.ca"
+            paths:
+              - path: /
+                pathType: Prefix
+                service:
+                  identifier: code-server
+                  port: http
+        tls:
+          - hosts:
+              - *codeHost
