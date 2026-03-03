@@ -157,6 +157,8 @@ spec:
               - *host
       code-server:
         className: "traefik"
+        annotations:
+          traefik.ingress.kubernetes.io/router.middlewares: traefik-sso@kubernetescrd
         hosts:
           - host: &codeHost "hass-editor.samsonnguyen.ca"
             paths:
