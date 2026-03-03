@@ -155,18 +155,3 @@ spec:
         tls:
           - hosts:
               - *host
-      code-server:
-        className: "traefik"
-        annotations:
-          traefik.ingress.kubernetes.io/router.middlewares: traefik-sso@kubernetescrd
-        hosts:
-          - host: &codeHost "hass-editor.samsonnguyen.ca"
-            paths:
-              - path: /
-                pathType: Prefix
-                service:
-                  identifier: code-server
-                  port: http
-        tls:
-          - hosts:
-              - *codeHost
