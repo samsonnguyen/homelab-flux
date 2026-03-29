@@ -15,8 +15,7 @@ spec:
   values:
     image:
       repository: lscr.io/linuxserver/sonarr
-      tag: latest
-      pullPolicy: Always
+      tag: 4.0.17.2952-ls305
     env:
       TZ: "America/Edmonton"
       PUID: "1001"
