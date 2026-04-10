@@ -124,13 +124,6 @@ spec:
             app:
               - path: /venv
                 subPath: hass-venv
-    mariadb:
-      enabled: true
-      primary:
-        persistence:
-          enabled: true
-          storageClass: freenas-iscsi-csi
-
     ingress:
       main:
         # ensure that external DNS (cloudflare) has an entry for this directed to the router
