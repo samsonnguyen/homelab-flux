@@ -1,5 +1,11 @@
 Personal homelab project based on flux
 
+## Cluster
+
+Single-node RKE2 cluster. See [rke2/README.md](rke2/README.md) for setup instructions.
+
+Legacy RKE config is in [rke/cluster.yml](rke/cluster.yml) (deprecated).
+
 
 
 

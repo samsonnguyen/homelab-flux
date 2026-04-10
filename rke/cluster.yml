@@ -14,11 +14,6 @@ nodes:
     role:
       - worker
     hostname_override: kube-worker1
-  - address: 10.0.10.12
-    user: root
-    role:
-      - worker
-    hostname_override: kube-worker2
 
 network:
   plugin: flannel

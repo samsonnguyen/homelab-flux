@@ -1,0 +1,30 @@
+# RKE2 Server Configuration
+# Place this at /etc/rancher/rke2/config.yaml on the node
+
+# Allow workloads on this single server node (removes default control plane taint)
+node-taint: []
+
+# Cluster networking
+cluster-cidr: 10.42.0.0/16
+service-cidr: 10.43.0.0/16
+cluster-dns: 10.43.0.10
+
+# CNI - use canal (calico + flannel), the RKE2 default
+cni: canal
+
+# Disable built-in ingress controller (we use Traefik via Flux)
+disable:
+  - rke2-ingress-nginx
+
+# TLS SANs for API server access (add your node IP and any hostnames)
+tls-san:
+  - 10.0.10.59
+  - kube-master1
+
+# Kubeconfig permissions
+write-kubeconfig-mode: "0644"
+
+# Kubelet args for iSCSI, OpenEBS, and GPU support
+kubelet-arg:
+  - "cluster-domain=cluster.local"
+  - "allowed-unsafe-sysctls=net.*"
