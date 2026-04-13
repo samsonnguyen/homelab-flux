@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-red-tailscale
+  namespace: node-red
+  annotations:
+    tailscale.com/hostname: "noderedold"
+spec:
+  type: LoadBalancer
+  loadBalancerClass: tailscale
+  selector:
+    app.kubernetes.io/name: node-red
+    app.kubernetes.io/instance: node-red
+  ports:
+    - name: http
+      port: 1880
+      targetPort: 1880
+      protocol: TCP

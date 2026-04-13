@@ -6,3 +6,4 @@ resources:
   - release.yaml
   - pv.yaml
   - ingressroute.yaml
+  - tailscale-service.yaml
