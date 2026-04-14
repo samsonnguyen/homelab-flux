@@ -6,3 +6,4 @@ resources:
   - release.yaml
   - pv.yaml
   - pvc.yaml
+  - tailscale-service.yaml

@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: home-assistant-tailscale
+  namespace: home-assistant
+  annotations:
+    tailscale.com/hostname: "homeassistantold"
+spec:
+  type: LoadBalancer
+  loadBalancerClass: tailscale
+  selector:
+    app.kubernetes.io/name: home-assistant
+    app.kubernetes.io/instance: home-assistant
+  ports:
+    - name: http
+      port: 8123
+      targetPort: 8123
+      protocol: TCP
